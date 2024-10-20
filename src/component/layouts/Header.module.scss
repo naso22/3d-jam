@@ -1,0 +1,197 @@
+.header {
+    background-color: #ffffff;
+    padding-bottom: 15px;
+    padding-top: 5px;
+  }
+  
+  .header__content {
+    box-shadow: 0px 2px 4px 0px rgba(219, 219, 219, 0.5);
+    background-color: #fff;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    width: 100%;
+  }
+  
+  .header__inner {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    max-width: 1195px;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .headerLogo {
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    background: -webkit-linear-gradient(0deg, #235C9B, #1176A2);
+    -webkit-background-clip: text;
+    font-weight: 700;
+    font-size: 25px;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5px;
+  }
+  
+  .headerNavList {
+    display: flex;
+    justify-content: end;
+
+  }
+  
+  .headerNavListItem {
+    padding: 18px 20px;
+    font-size: 14px;
+    color: #333;
+    letter-spacing: 2px;
+  }
+  
+  .headerToggle {
+    display: none;
+  }
+  
+  .drawerBg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .addBg {
+    opacity: 0.3;
+    visibility: visible;
+  }
+  
+  .swiper {
+    margin: 8rem auto 2rem;
+    padding-bottom: 40px;
+  }
+  
+  .swiperSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .swiperSlide img {
+    object-fit: cover;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media screen and (max-width: 780px) {
+    .newLineStyle {
+      display: block;
+    }
+    
+    .headerToggle {
+      display: block;
+      position: fixed;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      z-index: 1;
+      right: 15px;
+    }
+    
+    .headerNav {
+      position: fixed;
+      display: flex;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100%;
+      background-color: #fff;
+      font-size: 16px;
+      box-sizing: border-box;
+      padding-top: 50px;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+    }
+  
+    .headerToggle span {
+      display: block;
+      position: absolute;
+      width: 40px;
+      border-bottom: solid 2px #235C9B;
+      -webkit-transition: 0.35s ease-in-out;
+      -moz-transition: 0.35s ease-in-out;
+      transition: 0.35s ease-in-out;
+    }
+  
+    .headerToggle span:nth-child(1) {
+      top: 5px;
+    }
+  
+    .headerToggle span:nth-child(2) {
+      top: 18px;
+    }
+  
+    .headerToggle span:nth-child(3) {
+      top: 32px;
+    }
+  
+    .headerToggleActive span:nth-child(1) {
+      top: 18px;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+  
+    .headerToggleActive span:nth-child(2),
+    .headerToggleActive span:nth-child(3) {
+      top: 18px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  
+    .headerNavOpen {
+      right: 0;
+      animation-duration: 0.4s;
+      opacity: 1;
+    }
+  
+    .hamburgerNavGroup {
+      flex-flow: column;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .hamburgerNavGroup li {
+      margin-right: 20px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+  
+    .headerNav {
+      align-items: start;
+      justify-content: start;
+    }
+  
+    .headerNavList {
+      flex-flow: column;
+      width: 100%;
+    }
+  
+    .headerNavListItem {
+      padding: 18px 22px;
+      font-size: 14px;
+      color: #333;
+      letter-spacing: 2px;
+      border-bottom: #ececec 1px solid;
+    }
+  }
+  
