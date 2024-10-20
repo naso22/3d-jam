@@ -1,0 +1,91 @@
+.insidesp {
+    width: 50%;
+}
+
+.show_num {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 8px 10px;
+}
+
+.widget {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px #4385bb12;
+    margin-top: 2.5em;
+    background: #fff;
+    font-size: 0.98em;
+
+    &__title {
+        padding: 6px 18px;
+        font-size: 20px;
+        line-height: 30px;
+        background-color: #235C9B;
+        color: #fff;
+    }
+
+    &__inner {
+        padding: 10px;
+        padding-bottom: 50px;
+    }
+
+    &__name {
+        text-align: center;
+        margin: 20px 0;
+        font-weight: bold;
+    }
+
+    &__text {
+        display: table-cell;
+        font-size: 0.9em;
+        line-height: 2;
+        vertical-align: middle;
+        width: calc(100% - 88px);
+    }
+
+    .my-widget {
+        li {
+            a {
+                display: table;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.newPost {
+    margin-top: 5em;
+
+    &__img {
+        display: table-cell;
+        height: 88px;
+        padding-right: 8px;
+        vertical-align: middle;
+        width: 88px;
+
+        img {
+            height: auto;
+            transition: var(--wp--custom--transition--default);
+            width: 100%;
+        }
+    }
+}
+
+.profiel {
+    text-align: center;
+
+    &__img {
+        text-align: center;
+
+        img {
+            width: 70px;
+        }
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .insidesp {
+        width: 100%;
+        padding: 15px;
+    }
+}

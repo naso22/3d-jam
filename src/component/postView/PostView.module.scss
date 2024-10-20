@@ -1,0 +1,125 @@
+
+
+.postTab {
+  margin-top: 40px;
+  background: #235C9B;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: .85em;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 30px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+}
+
+.postTab .tab1,
+.postTab .tab3 {
+  border-right: 1px solid #eaeaea;
+}
+
+.postTab .tab3,
+.postTab .tab4 {
+  border-top: 1px solid #eaeaea;
+}
+
+.postTab > div.tab-active {
+  background: var(--wp--preset--color--sango-main);
+  color: #fff;
+}
+
+.postTab > div:last-of-type {
+  border-right: none;
+}
+
+.postTab > div {
+  cursor: pointer;
+  padding: 0.8em 0.2em;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.post__inner {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/*--------------------------------------
+カード型_02
+--------------------------------------*/
+.lWrapper02 {
+  margin: 0 auto;
+  min-width: 200px;
+}
+
+.cardRadius02 {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
+
+.card02 {
+  background-color: #fff;
+  box-shadow: 0 0 0px rgba(0, 0, 0, .16);
+  color: #212121;
+  text-decoration: none;
+  padding-bottom: 15px;
+}
+
+.card__title02 {
+  padding: 1rem 1.5rem 0;
+  font-size: 18px;
+  order: 1;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card__thumbnail02 {
+  margin: 0;
+  order: 0;
+}
+
+.card__image02 {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.card__day {
+  padding-left: 24px;
+  padding-top: 8px;
+  color: #b2b2b2;
+}
+
+.postTag {
+  padding-left: 24px;
+  padding-top: 8px;
+  color: #689bd6;
+}
+
+.postMain {
+  margin-top: 5em;
+}
+
+@media screen and (max-width: 780px) {
+  .content {
+      padding: 0 8px;
+  }
+  .content__inner {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .post__inner {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
