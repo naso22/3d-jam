@@ -68,6 +68,10 @@
     opacity: 0.3;
     visibility: visible;
   }
+
+  .FirstView {
+    margin-top: 130px;
+  }
   
   .swiper {
     margin: 8rem auto 2rem;
@@ -87,6 +91,8 @@
     width: 100%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
+
+
   
   @media screen and (max-width: 780px) {
     .newLineStyle {

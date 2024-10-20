@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from './Header.module.scss'; // CSSモジュールのインポート
-
+import SlideShow from '../slideShow/SlideShow';
 export default function Header() {
     return (
         <>
@@ -41,7 +41,8 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-                <div className="first-view">
+                <div className={styles.FirstView}>
+                    <SlideShow />
                     {/* Swiperの部分はクライアントサイドでレンダリングされるべき */}
                 </div>
             </header>
