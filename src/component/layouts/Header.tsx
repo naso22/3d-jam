@@ -34,7 +34,7 @@ export default function Header() {
                             </ul>
                         </nav>
 
-                        <div className={styles.headerToggle}>
+                        <div className={styles.headerToggle} >
                             <span></span>
                             <span></span>
                             <span></span>
@@ -43,7 +43,6 @@ export default function Header() {
                 </div>
                 <div className={styles.FirstView}>
                     <SlideShow />
-                    {/* Swiperの部分はクライアントサイドでレンダリングされるべき */}
                 </div>
             </header>
         </>

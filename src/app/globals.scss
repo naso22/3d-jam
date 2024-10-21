@@ -58,3 +58,23 @@ main{
     margin: 30px auto;
   }
 
+  @media screen and (max-width: 780px) {
+    .content {
+      padding: 0 8px;
+    }
+    .content__inner {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+    main {
+      padding-right: 0;
+    }
+  }
+
+  .swiper-slide img {
+    object-fit: cover;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
