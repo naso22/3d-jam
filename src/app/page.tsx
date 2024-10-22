@@ -12,7 +12,6 @@ export default function Home() {
           <SideBar />
         </div>
       </div>
-
       <Footer />
     </div>
   );

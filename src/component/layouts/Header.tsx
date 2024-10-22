@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import styles from './Header.module.scss'; // CSSモジュールのインポート
 import SlideShow from '../slideShow/SlideShow';
+import styles from './Header.module.scss'; // CSSモジュールのインポート
+import HambergarMenu from "./HambergarMenu"
 export default function Header() {
     return (
         <>
@@ -34,11 +35,7 @@ export default function Header() {
                             </ul>
                         </nav>
 
-                        <div className={styles.headerToggle} >
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
+                        <HambergarMenu />  
                     </div>
                 </div>
                 <div className={styles.FirstView}>
