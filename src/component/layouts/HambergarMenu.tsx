@@ -12,11 +12,9 @@ export default function Header() {
 
   return (
     <>
-      {/* isMenuOpenがtrueのときにstyles.addBgを追加 */}
       <div className={`${styles.drawerBg} ${isMenuOpen ? styles.addBg : ""}`}></div>
       
-      {/* isMenuOpenがtrueのときにstyles.activeを追加 */}
-      <nav className={`${styles.headerNav} ${isMenuOpen ? styles.headerNavOpen : ""}`}>
+      <nav className={`${styles.hambergerMenu} ${styles.headerNav} ${isMenuOpen ? styles.headerNavOpen : ""}`}>
         <ul className={styles.headerNavList}>
           <li className={styles.headerNavListItem}>
             <Link href="https://www.front-blog.com">ホーム</Link>
