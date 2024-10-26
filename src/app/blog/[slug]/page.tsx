@@ -1,7 +1,6 @@
 // app/blog/[slug]/page.tsx
 import ArticleComponent from "@/component/article/ArticleComponent";
 import Footer from "@/component/layouts/Footer";
-import Header from "@/component/layouts/Header";
 import SideBar from "@/component/sideBar/SideBar";
 // 1. generateStaticParamsの追加
 export async function generateStaticParams() {
@@ -36,11 +35,10 @@ export default async function ArticlePage({
 
   return (
     <>
-      <Header />
       <div className="content__wrapper">
       <div className="content">
         <div className="content__inner">
-          <ArticleComponent title={article.title} mainVisual={article.mainVisual.url} articleContent={article.content} />
+          <ArticleComponent blogUrl={article.id} title={article.title} mainVisual={article.mainVisual.url} articleContent={article.content} />
           {/* <div dangerouslySetInnerHTML={{ __html: article.content }} /> */}
           <SideBar />
         </div>

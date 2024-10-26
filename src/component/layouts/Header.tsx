@@ -1,44 +1,37 @@
-import Link from 'next/link';
-import styles from './Header.module.scss'; // CSSモジュールのインポート
-import HambergarMenu from "./HambergarMenu"
-export default function Header() {
-    return (
-        <>
-            <header className={styles.header}>
-                <div className={styles.header__content}>
-                    <div className={styles.header__inner}>
-                        <h1 className={styles.headerLogo}>
-                            <Link href="https://www.front-blog.com">
-                                Front Blog
-                            </Link>
-                        </h1>
+import Link from "next/link";
+import HambergarMenu from "./HambergarMenu";
+import styles from "./Header.module.scss"; // CSSモジュールのインポート
 
-                        <div className={styles.drawer_bg}></div>
-                        <nav className={styles.headerNav}>
-                            <ul className={styles.headerNavList}>
-                                <li className={styles.headerNavListItem}>
-                                    <Link href="https://www.front-blog.com">
-                                        ホーム
-                                    </Link>
-                                </li>
-                                <li className={styles.headerNavListItem}>
-                                    <Link href="https://www.front-blog.com/about">
-                                        サイト概要
-                                    </Link>
-                                </li>
-                                <li className={styles.headerNavListItem}>
-                                    <Link href="https://www.front-blog.com/contact">
-                                        お問い合わせ
-                                    </Link>
-                                </li>
-                            </ul>
-                        </nav>
+type HeaderProps = {
+  navItems: { name: string; href: string }[];
+};
 
+export default async function Header({ navItems }:HeaderProps) {
+  return (
+    <>
+      <header className={styles.header}>
+        <div className={styles.header__content}>
+          <div className={styles.header__inner}>
+            <h1 className={styles.headerLogo}>
+              <Link href="/">Front Blog</Link>
+            </h1>
 
-                        <HambergarMenu />  
-                    </div>
-                </div>
-            </header>
-        </>
-    );
+            <div className={styles.drawer_bg}></div>
+            <nav className={styles.headerNav}>
+              <ul className={styles.headerNavList}>
+                {navItems.map((item, index) => {
+                  return (
+                    <li key={index} className={styles.headerNavListItem}>
+                      <Link href={item.href}>{item.name}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+            <HambergarMenu navItems={navItems} />
+          </div>
+        </div>
+      </header>
+    </>
+  );
 }

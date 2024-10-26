@@ -55,7 +55,12 @@ img{
 }
 
 .content__wrapper {
-  padding-top: 100px;
+  padding-top: 96px;
+}
+@media screen and (max-width: 780px) {
+  .content__wrapper {
+    padding-top: 75px;
+  }
 }
 
 .content {

@@ -1,6 +1,13 @@
+import Link from "next/link";
 import styles from "./BreadcrumbComponent.module.scss";
 
-export default function BreadcrumbComponent() {
+type BreadcrumbProps = {
+  breadcrumbData: { name: string; href: string }[];
+};
+
+export default function BreadcrumbComponent({
+  breadcrumbData,
+}: BreadcrumbProps) {
   return (
     <>
       <ol
@@ -8,29 +15,26 @@ export default function BreadcrumbComponent() {
         itemScope
         itemType="https://schema.org/BreadcrumbList"
       >
-        <li
-          itemProp="itemListElement"
-          itemScope
-          itemType="https://schema.org/ListItem"
-          className={styles.breadcrumbItem}
-        >
-          <a itemProp="item" href="ホームのURL" className={styles.breadcrumbLink}>
-            <span itemProp="name">ホーム</span>
-          </a>
-          <meta itemProp="position" content="1" />
-        </li>
-
-        <li
-          itemProp="itemListElement"
-          itemScope
-          itemType="https://schema.org/ListItem"
-          className={styles.breadcrumbItem}
-        >
-          <a itemProp="item" href="ホームのURL" className={styles.breadcrumbLink}>
-            <span itemProp="name">ホーム</span>
-          </a>
-          <meta itemProp="position" content="1" />
-        </li>
+        {breadcrumbData.map((crumb, index) => {
+          return (
+            <li
+              key={index}
+              itemProp="itemListElement"
+              itemScope
+              itemType="https://schema.org/ListItem"
+              className={styles.breadcrumbItem}
+            >
+              <Link
+                itemProp="item"
+                href={crumb.href}
+                className={styles.breadcrumbLink}
+              >
+                <span itemProp="name">{crumb.name}</span>
+              </Link>
+              <meta itemProp="position" content="1" />
+            </li>
+          );
+        })}
       </ol>
     </>
   );
