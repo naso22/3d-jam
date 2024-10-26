@@ -1,0 +1,30 @@
+.breadcrumb {
+    margin: 0;
+    padding-bottom: 30px;
+    list-style: none;
+  }
+  
+  .breadcrumbItem {
+    display: inline;/*横に並ぶように*/
+    list-style: none;
+    font-weight: bold;/*太字*/
+  }
+  
+  .breadcrumbItem:after {/* >を表示*/
+    content: '>';
+    padding: 0  0.8em;
+    color: #555;
+  }
+  
+  .breadcrumbItem:last-child:after {
+    content: '';
+  }
+  
+  .breadcrumbLink {
+    text-decoration: none;
+    color: #000000;/*色*/
+  }
+  
+  .breadcrumbLink:hover {
+    text-decoration: underline;
+  }

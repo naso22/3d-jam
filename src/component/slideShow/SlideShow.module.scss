@@ -1,5 +1,29 @@
-.SlideItem{
-    object-fit: cover;
-    width: 100%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+.SlideItem {
+  object-fit: cover;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.FirstView {
+  background-color: #fff;
+  padding-top: 40px;
+}
+
+.swiper {
+  margin: 8rem auto 2rem;
+  padding-bottom: 40px;
+}
+
+.swiperSlide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.swiperSlide img {
+  object-fit: cover;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }

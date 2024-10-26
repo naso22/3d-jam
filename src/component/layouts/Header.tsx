@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import SlideShow from '../slideShow/SlideShow';
 import styles from './Header.module.scss'; // CSSモジュールのインポート
 import HambergarMenu from "./HambergarMenu"
 export default function Header() {
@@ -38,9 +37,6 @@ export default function Header() {
 
                         <HambergarMenu />  
                     </div>
-                </div>
-                <div className={styles.FirstView}>
-                    <SlideShow />
                 </div>
             </header>
         </>
