@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import BlogCard from "../card/BlogCard";
+import PageNation from "../parts/pageNation/PageNation";
 import styles from "./PostView.module.scss";
 
 type BlogCategory = {
@@ -18,9 +19,15 @@ type BlogPost = {
 
 type PostViewProps = {
   blogList: BlogPost[];
+  totalCount: number;
+  currentPage: number;
 };
 
-export default function PostView({ blogList }: PostViewProps) {
+export default function PostView({
+  blogList,
+  totalCount,
+  currentPage,
+}: PostViewProps) {
   const [selectedTab, setSelectedTab] = useState("new");
 
   const renderPosts = (category: string, index: number) => {
@@ -45,6 +52,18 @@ export default function PostView({ blogList }: PostViewProps) {
             <p className={styles.noPostsMessage}>一致する投稿がありません。</p>
           )}
         </div>
+        {filteredPosts.length !== 0 && category === "new" && (
+          <PageNation totalCount={totalCount} currentPage={currentPage} />
+        )}
+        {filteredPosts.length !== 0 && category !== "new" && (
+          <>
+            <p className="post__more-btn">
+              <a href="https://www.front-blog.com/category/%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0/">
+                プログラミング記事をもっと見る
+              </a>
+            </p>
+          </>
+        )}
       </div>
     );
   };

@@ -16,7 +16,7 @@ export default function SideBar() {
           </div> */}
           <p className={styles.widget__name}>さかもと</p>
           <div className={styles.widget__text}>
-            WebGLやThree.jsなどの3D技術やJamstackを使ったWEBサイトを提供しています
+            3D技術とJamstackを利用してWEBサイト制作をしています
           </div>
         </div>
       </div>

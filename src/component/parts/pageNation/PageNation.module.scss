@@ -1,0 +1,20 @@
+.pagination {
+    margin: 40px 0 0;
+    text-align: center;
+}
+
+.pagination .current {
+    padding: 20px 27px;
+    background: #235c9b;
+    color: #fff;
+}
+
+.pageNumbers {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 20px 27px;
+    color: #333;
+    border-radius: 100px;
+    box-shadow: 0 4px 15px rgba(172, 172, 172, 0.2);
+    background: #fff;
+}

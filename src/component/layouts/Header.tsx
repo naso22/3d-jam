@@ -13,7 +13,7 @@ export default async function Header({ navItems }:HeaderProps) {
         <div className={styles.header__content}>
           <div className={styles.header__inner}>
             <h1 className={styles.headerLogo}>
-              <Link href="/">Front Blog</Link>
+              <Link href="/">3D-Jam</Link>
             </h1>
 
             <div className={styles.drawer_bg}></div>

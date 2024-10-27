@@ -19,7 +19,7 @@ export default function BlogCard({ blog }: BlogPost) {
   return (
     <>
       <div className={styles.cardRadius02} key={blog.id}>
-        <Link href={`blog/${blog.id}`}>
+        <Link href={`/blog/${blog.id}`}>
           <article className={styles.card02}>
             <div className={styles.cardHeader02}>
               <figure className={styles.card__thumbnail02}>

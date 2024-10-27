@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 
   // 各記事のidをslugとして返す
   return articles.contents.map((article: { id: string }) => ({
-    slug: article.id, // idをslugとして使用
+    slug: article.id,
   }));
 }
 
@@ -36,12 +36,17 @@ export default async function ArticlePage({
   return (
     <>
       <div className="content__wrapper">
-      <div className="content">
-        <div className="content__inner">
-          <ArticleComponent blogUrl={article.id} title={article.title} mainVisual={article.mainVisual.url} articleContent={article.content} />
-          <SideBar />
+        <div className="content">
+          <div className="content__inner">
+            <ArticleComponent
+              blogUrl={article.id}
+              title={article.title}
+              mainVisual={article.mainVisual.url}
+              articleContent={article.content}
+            />
+            <SideBar />
+          </div>
         </div>
-      </div>
       </div>
       <Footer />
     </>

@@ -6,15 +6,15 @@ import SlideShow from "@/component/slideShow/SlideShow";
 
 export default async function Home() {
   const blogList = await fetch(
-    `https://3d-jam.microcms.io/api/v1/blog/`,
+    `https://3d-jam.microcms.io/api/v1/blog?limit=6`,
     {
       headers: {
         "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7", // ここにAPIキーを挿入
       },
+      
     }
   ).then((res) => res.json());
 
-  console.log(blogList)
 
   return (
     <div>
@@ -22,7 +22,7 @@ export default async function Home() {
         <SlideShow />
         <div className="content post">
           <div className="content__inner">
-            <PostView blogList={blogList.contents}/>
+            <PostView blogList={blogList.contents} totalCount={blogList.totalCount} currentPage={1}/>
             <SideBar />
           </div>
         </div>
