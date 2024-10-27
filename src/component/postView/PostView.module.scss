@@ -41,68 +41,42 @@
   width: 50%;
 }
 
+.post {
+  display: none;
+}
+
 .post__inner {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
 }
 
-/*--------------------------------------
-カード型_02
---------------------------------------*/
-.lWrapper02 {
-  margin: 0 auto;
-  min-width: 200px;
-}
-
-.cardRadius02 {
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.card02 {
-  background-color: #fff;
-  box-shadow: 0 0 0px rgba(0, 0, 0, 0.16);
-  color: #212121;
-  text-decoration: none;
-  padding-bottom: 15px;
-}
-
-.card__title02 {
-  padding: 1rem 1.5rem 0;
-  font-size: 18px;
-  order: 1;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.card__thumbnail02 {
-  margin: 0;
-  order: 0;
-  height:200px;
-}
-
-.card__image02 {
-  margin-bottom: 8px;
-  width: 100%;
-  height: 100%;
-}
-
-.card__day {
-  padding-left: 24px;
-  padding-top: 8px;
-  color: #b2b2b2;
-}
-
-.postTag {
-  padding-left: 24px;
-  padding-top: 8px;
-  color: #689bd6;
-}
-
 .postMain {
   margin-top: 5em;
+}
+
+@keyframes fadeInAndSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.show {
+  display: block;
+  animation-name: fadeInAndSlideUp;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+.selected{
+  background-color: #173c68;
+  transition: .3S;
 }
 
 @media screen and (max-width: 780px) {

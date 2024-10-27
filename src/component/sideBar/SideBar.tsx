@@ -21,7 +21,7 @@ export default function SideBar() {
                 </div>
             </div>
 
-            <div className={`${styles.widget} ${styles.newPost}`}>
+            {/* <div className={`${styles.widget} ${styles.newPost}`}>
                 <h4 className={styles.widget__title}>最新記事</h4>
                 <ul className={styles.show_num}>
                     {Array(5).fill('').map((_, index) => (
@@ -40,7 +40,7 @@ export default function SideBar() {
                         </li>
                     ))}
                 </ul>
-            </div>
+            </div> */}
         </aside>
     );
 }

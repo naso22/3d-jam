@@ -39,7 +39,6 @@ export default async function ArticlePage({
       <div className="content">
         <div className="content__inner">
           <ArticleComponent blogUrl={article.id} title={article.title} mainVisual={article.mainVisual.url} articleContent={article.content} />
-          {/* <div dangerouslySetInnerHTML={{ __html: article.content }} /> */}
           <SideBar />
         </div>
       </div>

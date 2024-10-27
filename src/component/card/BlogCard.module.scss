@@ -1,0 +1,51 @@
+.lWrapper02 {
+    margin: 0 auto;
+    min-width: 200px;
+  }
+  
+  .cardRadius02 {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .card02 {
+    background-color: #fff;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.16);
+    color: #212121;
+    text-decoration: none;
+    padding-bottom: 15px;
+  }
+  
+  .card__title02 {
+    padding: 1rem 1.5rem 0;
+    font-size: 18px;
+    order: 1;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .card__thumbnail02 {
+    margin: 0;
+    order: 0;
+  }
+  
+  .card__image02 {
+    margin-bottom: 8px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card__day {
+    padding-left: 24px;
+    padding-top: 8px;
+    color: #b2b2b2;
+  }
+  
+  .postTag {
+    padding-left: 24px;
+    padding-top: 8px;
+    color: #689bd6;
+  }

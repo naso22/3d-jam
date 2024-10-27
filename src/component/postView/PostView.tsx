@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+import { useState } from "react";
+import BlogCard from "../card/BlogCard";
 import styles from "./PostView.module.scss";
 
 type BlogCategory = {
@@ -19,39 +21,73 @@ type PostViewProps = {
 };
 
 export default function PostView({ blogList }: PostViewProps) {
+  const [selectedTab, setSelectedTab] = useState("new");
+
+  const renderPosts = (category: string, index: number) => {
+    const filteredPosts =
+      category === "new"
+        ? blogList
+        : blogList.filter((blog) => blog.category[0]?.title === category);
+
+    return (
+      <div
+        key={index}
+        className={`${styles.post} ${
+          selectedTab === category ? styles.show : ""
+        }`}
+      >
+        <div className={styles.post__inner}>
+          {filteredPosts.length > 0 ? (
+            filteredPosts.map((blog, index) => (
+              <BlogCard key={index} blog={blog} />
+            ))
+          ) : (
+            <p className={styles.noPostsMessage}>一致する投稿がありません。</p>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <main className="content-inner">
       <div className={styles.postTab}>
-        <div className={styles.tab1}>人気記事</div>
-        <div className={styles.tab2}>プログラミング</div>
-        <div className={styles.tab3}>デザイン</div>
-        <div className={styles.tab4}>WordPress</div>
+        <div
+          className={`${styles.tab1} ${
+            selectedTab === "new" ? styles.selected : ""
+          }`}
+          onClick={() => setSelectedTab("new")}
+        >
+          最新記事
+        </div>
+        <div
+          className={`${styles.tab2} ${
+            selectedTab === "Three.js" ? styles.selected : ""
+          }`}
+          onClick={() => setSelectedTab("Three.js")}
+        >
+          Three.js
+        </div>
+        <div
+          className={`${styles.tab3} ${
+            selectedTab === "Jamstack" ? styles.selected : ""
+          }`}
+          onClick={() => setSelectedTab("Jamstack")}
+        >
+          Jamstack
+        </div>
+        <div
+          className={`${styles.tab4} ${
+            selectedTab === "UI/UX" ? styles.selected : ""
+          }`}
+          onClick={() => setSelectedTab("UI/UX")}
+        >
+          UI/UX
+        </div>
       </div>
-
-      <div className={styles.post__inner}>
-        {blogList.map((blog) => (
-          <Link key={blog.id} href={`blog/${blog.id}`}>
-            <article className={styles.cardRadius02}>
-              <div className={styles.card02}>
-                <div className={styles.card__thumbnail02}>
-                  <img
-                    src={blog.mainVisual?.url}
-                    className={styles.card__image02}
-                    alt={blog.title}
-                  />
-                </div>
-                <time className={styles.card__day}>2024.01.16</time>
-                <p className={styles.card__title02}>{blog.title}</p>
-                <ul>
-                  <li className={styles.postTag}>
-                    <span>{blog.category[0]?.title}</span>
-                  </li>
-                </ul>
-              </div>
-            </article>
-          </Link>
-        ))}
-      </div>
+      {["new", "Three.js", "Jamstack", "UI/UX"].map((category, index) =>
+        renderPosts(category, index)
+      )}
     </main>
   );
 }
