@@ -73,15 +73,20 @@ img{
   padding-top: 40px;
 }
 
+.contact{
+  padding-top: 30px;
+  overflow: hidden;
+}
+
 .content__inner {
   display: flex;
   max-width: 1180px;
-  margin: 0 auto 30px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 780px) {
   .content {
-    padding: 0 8px;
+    padding: 0 8px 100px 8px;
   }
   .content__inner {
     flex-wrap: wrap;

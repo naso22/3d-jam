@@ -1,27 +1,27 @@
-import styles from './SideBar.module.scss';
+import styles from "./SideBar.module.scss";
 
 export default function SideBar() {
-    return (
-        <aside className={styles.insidesp}>
-            <div className={styles.widget}>
-                <h4 className={`${styles.widget__title} ${styles.profiel}`}>
-                    プロフィール
-                </h4>
-                <div className={styles.widget__inner}>
-                    <div className={styles.profiel__img}> 
-                        <img
-                            src="https://kyomoneyblog.com/wp-content/uploads/7051304f37a3653aa23d9cdad05e7688-96x96.png"
-                            alt=""
-                        />
-                    </div>
-                    <p className={styles.widget__name}>さかもと</p>
-                    <div className={styles.widget__text}>
-                        テキストテキストテキストテキストテキストテキスト
-                    </div>
-                </div>
-            </div>
+  return (
+    <aside className={styles.insidesp}>
+      <div className={styles.widget}>
+        <h4 className={`${styles.widget__title} ${styles.profiel}`}>
+          プロフィール
+        </h4>
+        <div className={styles.widget__inner}>
+          {/* <div className={styles.profiel__img}>
+            <img
+              src="https://kyomoneyblog.com/wp-content/uploads/7051304f37a3653aa23d9cdad05e7688-96x96.png"
+              alt=""
+            />
+          </div> */}
+          <p className={styles.widget__name}>さかもと</p>
+          <div className={styles.widget__text}>
+            WebGLやThree.jsなどの3D技術やJamstackを使ったWEBサイトを提供しています
+          </div>
+        </div>
+      </div>
 
-            {/* <div className={`${styles.widget} ${styles.newPost}`}>
+      {/* <div className={`${styles.widget} ${styles.newPost}`}>
                 <h4 className={styles.widget__title}>最新記事</h4>
                 <ul className={styles.show_num}>
                     {Array(5).fill('').map((_, index) => (
@@ -41,6 +41,6 @@ export default function SideBar() {
                     ))}
                 </ul>
             </div> */}
-        </aside>
-    );
+    </aside>
+  );
 }

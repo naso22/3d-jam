@@ -8,7 +8,6 @@ async function getNavItems() {
   // SSGのためのデータ取得
   return [
     { name: "ホーム", href: "/" },
-    { name: "サイト概要", href: "/about" },
     { name: "お問い合わせ", href: "/contact" },
   ];
 }

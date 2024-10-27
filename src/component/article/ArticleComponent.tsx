@@ -15,7 +15,6 @@ export default function ArticleComponent({
 }: ArticleComponentProps) {
   const breadcrumbData = [
     { name: "ホーム", href: "/" },
-    { name: "ブログ", href: "/blog" },
     { name: title, href: `/blog/${blogUrl}` },
   ];
   return (
