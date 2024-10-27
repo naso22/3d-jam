@@ -1,10 +1,12 @@
 "use client";
 import { useState } from "react";
 import BlogCard from "../card/BlogCard";
+import MoreBtn from "../parts/moreBtn/MoreBtn";
 import PageNation from "../parts/pageNation/PageNation";
 import styles from "./PostView.module.scss";
 
 type BlogCategory = {
+  id:string
   title: string;
 };
 
@@ -57,11 +59,7 @@ export default function PostView({
         )}
         {filteredPosts.length !== 0 && category !== "new" && (
           <>
-            <p className="post__more-btn">
-              <a href="https://www.front-blog.com/category/%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0/">
-                プログラミング記事をもっと見る
-              </a>
-            </p>
+            <MoreBtn category={category} categoryId={filteredPosts[0].category[0].id}/>
           </>
         )}
       </div>
