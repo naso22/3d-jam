@@ -1,11 +1,10 @@
 import Footer from "@/component/layouts/Footer";
 import PostView from "@/component/postView/PostView";
 import SideBar from "@/component/sideBar/SideBar";
-import SlideShow from "@/component/slideShow/SlideShow";
 
 export async function generateStaticParams() {
   // APIから記事データを取得
-  const limit = 6; // 1ページあたりの表示件数
+//   const limit = 6; // 1ページあたりの表示件数
   const apiKey = "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7"; // APIキーを挿入
   const response = await fetch(`https://3d-jam.microcms.io/api/v1/category`, {
     headers: {
@@ -14,8 +13,8 @@ export async function generateStaticParams() {
   });
   const data = await response.json();
 
-  const totalCount = data.totalCount;
-  const totalPages = Math.ceil(totalCount / limit); 
+//   const totalCount = data.totalCount;
+//   const totalPages = Math.ceil(totalCount / limit); 
 
   return data.contents.map((category: { id: string }) => ({
     slug: category.id,
