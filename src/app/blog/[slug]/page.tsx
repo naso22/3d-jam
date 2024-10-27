@@ -11,8 +11,6 @@ export async function generateStaticParams() {
     },
   }).then((res) => res.json());
 
-  console.log(articles)
-
   // 各記事のidをslugとして返す
   return articles.contents.map((article: { id: string }) => ({
     slug: article.id,
