@@ -47,7 +47,9 @@ export default async function Home({ params }: { params: { id: string } }) {
             <PostView
               blogList={blogList.contents}
               totalCount={blogList.totalCount}
+              limit={6}
               currentPage={currentPage}
+              showTab={true}
             />
             <SideBar />
           </div>

@@ -22,7 +22,7 @@ export default async function Home() {
         <SlideShow />
         <div className="content post">
           <div className="content__inner">
-            <PostView blogList={blogList.contents} totalCount={blogList.totalCount} currentPage={1}/>
+            <PostView blogList={blogList.contents} totalCount={blogList.totalCount} limit={6} currentPage={1} showTab={true}/>
             <SideBar />
           </div>
         </div>

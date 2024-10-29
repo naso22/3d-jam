@@ -3,10 +3,12 @@ import styles from "./PageNation.module.scss";
 
 type PageNationProps = {
   totalCount: number;
+  limit:number;
   currentPage: number;
 };
 export default function PageNation({
   totalCount,
+  limit,
   currentPage,
 }: PageNationProps) {
   return (
@@ -31,7 +33,7 @@ export default function PageNation({
         <span className={`${styles.pageNumbers} ${styles.current}`}>
           {currentPage}
         </span>
-        {totalCount - currentPage * 6 > 0 && (
+        {totalCount - currentPage * limit > 0 && (
           <>
             <Link
               className={`${styles.pageNumbers}`}

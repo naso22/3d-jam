@@ -6,7 +6,7 @@ import PageNation from "../parts/pageNation/PageNation";
 import styles from "./PostView.module.scss";
 
 type BlogCategory = {
-  id:string
+  id: string;
   title: string;
 };
 
@@ -22,13 +22,17 @@ type BlogPost = {
 type PostViewProps = {
   blogList: BlogPost[];
   totalCount: number;
+  limit:number;
   currentPage: number;
+  showTab:boolean
 };
 
 export default function PostView({
   blogList,
   totalCount,
+  limit,
   currentPage,
+  showTab,
 }: PostViewProps) {
   const [selectedTab, setSelectedTab] = useState("new");
 
@@ -55,11 +59,14 @@ export default function PostView({
           )}
         </div>
         {filteredPosts.length !== 0 && category === "new" && (
-          <PageNation totalCount={totalCount} currentPage={currentPage} />
+          <PageNation totalCount={totalCount} limit={limit} currentPage={currentPage} />
         )}
         {filteredPosts.length !== 0 && category !== "new" && (
           <>
-            <MoreBtn category={category} categoryId={filteredPosts[0].category[0].id}/>
+            <MoreBtn
+              category={category}
+              categoryId={filteredPosts[0].category[0].id}
+            />
           </>
         )}
       </div>
@@ -68,40 +75,42 @@ export default function PostView({
 
   return (
     <main className="content-inner">
-      <div className={styles.postTab}>
-        <div
-          className={`${styles.tab1} ${
-            selectedTab === "new" ? styles.selected : ""
-          }`}
-          onClick={() => setSelectedTab("new")}
-        >
-          最新記事
+      {showTab && (
+        <div className={styles.postTab}>
+          <div
+            className={`${styles.tab1} ${
+              selectedTab === "new" ? styles.selected : ""
+            }`}
+            onClick={() => setSelectedTab("new")}
+          >
+            最新記事
+          </div>
+          <div
+            className={`${styles.tab2} ${
+              selectedTab === "Three.js" ? styles.selected : ""
+            }`}
+            onClick={() => setSelectedTab("Three.js")}
+          >
+            Three.js
+          </div>
+          <div
+            className={`${styles.tab3} ${
+              selectedTab === "Jamstack" ? styles.selected : ""
+            }`}
+            onClick={() => setSelectedTab("Jamstack")}
+          >
+            Jamstack
+          </div>
+          <div
+            className={`${styles.tab4} ${
+              selectedTab === "UI/UX" ? styles.selected : ""
+            }`}
+            onClick={() => setSelectedTab("UI/UX")}
+          >
+            UI/UX
+          </div>
         </div>
-        <div
-          className={`${styles.tab2} ${
-            selectedTab === "Three.js" ? styles.selected : ""
-          }`}
-          onClick={() => setSelectedTab("Three.js")}
-        >
-          Three.js
-        </div>
-        <div
-          className={`${styles.tab3} ${
-            selectedTab === "Jamstack" ? styles.selected : ""
-          }`}
-          onClick={() => setSelectedTab("Jamstack")}
-        >
-          Jamstack
-        </div>
-        <div
-          className={`${styles.tab4} ${
-            selectedTab === "UI/UX" ? styles.selected : ""
-          }`}
-          onClick={() => setSelectedTab("UI/UX")}
-        >
-          UI/UX
-        </div>
-      </div>
+      )}
       {["new", "Three.js", "Jamstack", "UI/UX"].map((category, index) =>
         renderPosts(category, index)
       )}
