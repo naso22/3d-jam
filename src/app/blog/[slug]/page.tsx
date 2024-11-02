@@ -32,9 +32,9 @@ export const generateMetadata = async ({
   const data = await res;
 
   return {
+    openGraph: {
     title: `${data.title}`,
     description: `${data.title}`,
-    openGraph: {
       url: `https://${blog.domain}/blog/${params.slug}`,
     },
   };
