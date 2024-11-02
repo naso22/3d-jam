@@ -20,11 +20,11 @@ type BlogPost = {
 };
 
 type PostViewProps = {
-  blogList: BlogPost[];
+  blogList: { newBlog: BlogPost[]; categoryBlog?: BlogPost[] };
   totalCount: number;
-  limit:number;
-  currentPage: number;
-  showTab:boolean
+  limit: number;
+  currentPage: { path: string; page: number };
+  showTab: boolean;
 };
 
 export default function PostView({
@@ -39,8 +39,10 @@ export default function PostView({
   const renderPosts = (category: string, index: number) => {
     const filteredPosts =
       category === "new"
-        ? blogList
-        : blogList.filter((blog) => blog.category[0]?.title === category);
+        ? blogList.newBlog
+        : blogList.categoryBlog?.filter(
+            (blog) => blog.category[0]?.title === category
+          );
 
     return (
       <div
@@ -50,22 +52,26 @@ export default function PostView({
         }`}
       >
         <div className={styles.post__inner}>
-          {filteredPosts.length > 0 ? (
-            filteredPosts.map((blog, index) => (
+          {(filteredPosts || []).length > 0 ? (
+            filteredPosts?.map((blog, index) => (
               <BlogCard key={index} blog={blog} />
             ))
           ) : (
             <p className={styles.noPostsMessage}>一致する投稿がありません。</p>
           )}
         </div>
-        {filteredPosts.length !== 0 && category === "new" && (
-          <PageNation totalCount={totalCount} limit={limit} currentPage={currentPage} />
+        {filteredPosts?.length !== 0 && category === "new" && (
+          <PageNation
+            totalCount={totalCount}
+            limit={limit}
+            currentPage={currentPage}
+          />
         )}
-        {filteredPosts.length !== 0 && category !== "new" && (
+        {filteredPosts?.length !== 0 && category !== "new" && (
           <>
             <MoreBtn
               category={category}
-              categoryId={filteredPosts[0].category[0].id}
+              categoryId={filteredPosts?.[0]?.category[0]?.id}
             />
           </>
         )}

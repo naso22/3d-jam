@@ -30,7 +30,8 @@ export default async function ArticlePage({
       headers: {
         "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7", // ここにAPIキーを挿入
       },
-    }
+    },
+    
   ).then((res) => res.json());
 
   return (
