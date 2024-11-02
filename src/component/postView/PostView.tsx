@@ -69,10 +69,12 @@ export default function PostView({
         )}
         {filteredPosts?.length !== 0 && category !== "new" && (
           <>
-            <MoreBtn
-              category={category}
-              categoryId={filteredPosts?.[0]?.category[0]?.id}
-            />
+            <div className={styles.more_btn_inner}>
+              <MoreBtn
+                category={category}
+                categoryId={filteredPosts?.[0]?.category[0]?.id}
+              />
+            </div>
           </>
         )}
       </div>

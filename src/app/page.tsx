@@ -2,30 +2,34 @@ import Footer from "@/component/layouts/Footer";
 import PostView from "@/component/postView/PostView";
 import SideBar from "@/component/sideBar/SideBar";
 import SlideShow from "@/component/slideShow/SlideShow";
+import { client } from "@/libs/client";
+import { site } from '@/models/site';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: `${site.title} | ${site.subTitle}`,
+  description: site.description,
+};
 
 export default async function Home() {
-  const blogList = await fetch(
-    `https://3d-jam.microcms.io/api/v1/blog?limit=6`,
-    {
-      headers: {
-        "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7", // ここにAPIキーを挿入
-      },
-    }
-  ).then((res) => res.json());
+  const blogList = await client
+    .get({
+      endpoint: "blog",
+      queries: { limit: 6 },
+    })
+    .then((res) => res);
 
   const categoresList = ["835ils8h-m9", "dxsdioak6fo"];
 
   const categoryBlog = [];
 
   for (const category of categoresList) {
-    const categoryBlogList = await fetch(
-      `https://3d-jam.microcms.io/api/v1/blog?limit=6&filters=category[contains]${category}`,
-      {
-        headers: {
-          "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7",
-        },
-      }
-    ).then((res) => res.json());
+    const categoryBlogList = await client
+      .get({
+        endpoint: "blog",
+        queries: { limit: 6, filters: `category[contains]${category}` },
+      })
+      .then((res) => res);
 
     categoryBlog.push(...categoryBlogList.contents);
   }

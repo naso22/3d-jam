@@ -2,17 +2,17 @@ import Footer from "@/component/layouts/Footer";
 import PostView from "@/component/postView/PostView";
 import SideBar from "@/component/sideBar/SideBar";
 import SlideShow from "@/component/slideShow/SlideShow";
+import { client } from "@/libs/client";
 
 export async function generateStaticParams() {
   // APIから記事データを取得
   const limit = 6; // 1ページあたりの表示件数
-  const apiKey = "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7"; // APIキーを挿入
-  const response = await fetch(`https://3d-jam.microcms.io/api/v1/blog`, {
-    headers: {
-      "X-MICROCMS-API-KEY": apiKey,
-    },
-  });
-  const data = await response.json();
+  const response = await client
+    .get({
+      endpoint: "blog",
+    })
+    .then((res) => res);
+  const data = await response;
 
   // 総記事数を取得
   const totalCount = data.totalCount;
@@ -28,35 +28,32 @@ export async function generateStaticParams() {
 
 export default async function Home({ params }: { params: { id: string } }) {
   const currentPage = parseInt(params.id);
-  const blogList = await fetch(
-    `https://3d-jam.microcms.io/api/v1/blog?limit=6&offset=${
-      (currentPage - 1) * 6
-    }`,
-    {
-      headers: {
-        "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7", // ここにAPIキーを挿入
-      },
-    }
-  ).then((res) => res.json());
 
-  const categoresList = ['835ils8h-m9',"dxsdioak6fo"]
-  const categoryBlog = []
+  const blogList = await client
+    .get({
+      endpoint: "blog",
+      queries: { limit: 6, offset: (currentPage - 1) * 6 },
+    })
+    .then((res) => res);
+
+  const categoresList = ["835ils8h-m9", "dxsdioak6fo"];
+  const categoryBlog = [];
 
   for (const category of categoresList) {
-    const categoryBlogList = await fetch(
-      `https://3d-jam.microcms.io/api/v1/blog?limit=6&filters=category[contains]${category}`,
-      {
-        headers: {
-          "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7",
-        },
-      }
-    ).then((res) => res.json());
+    const categoryBlogList = await client
+      .get({
+        endpoint: "blog",
+        queries: { limit: 6, filters: `category[contains]${category}` },
+      })
+      .then((res) => res);
 
-    console.log(categoryBlogList.contents.length)
     categoryBlog.push(...categoryBlogList.contents);
   }
 
-  const totalBlogList = {newBlog:blogList.contents,categoryBlog:categoryBlog}
+  const totalBlogList = {
+    newBlog: blogList.contents,
+    categoryBlog: categoryBlog,
+  };
 
   return (
     <div>
@@ -65,13 +62,13 @@ export default async function Home({ params }: { params: { id: string } }) {
         <div className="content post">
           <div className="content__inner">
             <main>
-            <PostView
-              blogList={totalBlogList}
-              totalCount={blogList.totalCount}
-              limit={6}
-              currentPage={{path:'/page',page:currentPage}}
-              showTab={true}
-            />
+              <PostView
+                blogList={totalBlogList}
+                totalCount={blogList.totalCount}
+                limit={6}
+                currentPage={{ path: "/page", page: currentPage }}
+                showTab={true}
+              />
             </main>
             <SideBar />
           </div>

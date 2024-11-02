@@ -2,6 +2,10 @@
     margin: 0;
     padding-bottom: 30px;
     list-style: none;
+    font-size: 14px;
+    @media screen and (max-width: 780px) {
+      font-size: 13px;
+    }
   }
   
   .breadcrumbItem {

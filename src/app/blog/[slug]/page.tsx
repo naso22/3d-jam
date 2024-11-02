@@ -2,14 +2,15 @@
 import ArticleComponent from "@/component/article/ArticleComponent";
 import Footer from "@/component/layouts/Footer";
 import SideBar from "@/component/sideBar/SideBar";
-// 1. generateStaticParamsの追加
+import { client } from "@/libs/client";
+import { blog } from "@/models/site";
+import { Metadata } from "next";
 export async function generateStaticParams() {
-  // APIから記事データを取得
-  const articles = await fetch("https://3d-jam.microcms.io/api/v1/blog", {
-    headers: {
-      "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7", // ここにAPIキーを挿入
-    },
-  }).then((res) => res.json());
+  const articles = await client
+    .get({
+      endpoint: "blog",
+    })
+    .then((res) => res);
 
   // 各記事のidをslugとして返す
   return articles.contents.map((article: { id: string }) => ({
@@ -17,22 +18,40 @@ export async function generateStaticParams() {
   }));
 }
 
+export const generateMetadata = async ({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> => {
+  const res = await client
+    .get({
+      endpoint: "blog",
+      contentId: params.slug,
+    })
+    .then((res) => res);
+  const data = await res;
+
+  return {
+    title: `${data.title}`,
+    description: `${data.title}`,
+    openGraph: {
+      url: `https://${blog.domain}/blog/${params.slug}`,
+    },
+  };
+};
+
 // 2. ArticlePageコンポーネント
 export default async function ArticlePage({
   params,
 }: {
   params: { slug: string };
 }) {
-  // 記事データをslug（id）で取得
-  const article = await fetch(
-    `https://3d-jam.microcms.io/api/v1/blog/${params.slug}`,
-    {
-      headers: {
-        "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7", // ここにAPIキーを挿入
-      },
-    },
-    
-  ).then((res) => res.json());
+  const article = await client
+    .get({
+      endpoint: "blog",
+      contentId: params.slug,
+    })
+    .then((res) => res);
 
   return (
     <>
