@@ -116,8 +116,14 @@ article {
   letter-spacing: 0.03em;
 }
 
+.blog-list-page{
+  @media screen and (max-width: 780px) {
+    padding-top: 20px;
+  }
+}
+
 .blog-list-page h1 {
-  margin: 10px auto 28px auto;
+  margin: 0 auto 28px auto;
   font-weight: bold;
   letter-spacing: 0.02em;
   line-height: 1.441;

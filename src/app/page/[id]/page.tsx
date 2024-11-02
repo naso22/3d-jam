@@ -64,6 +64,7 @@ export default async function Home({ params }: { params: { id: string } }) {
         <SlideShow />
         <div className="content post">
           <div className="content__inner">
+            <main>
             <PostView
               blogList={totalBlogList}
               totalCount={blogList.totalCount}
@@ -71,6 +72,7 @@ export default async function Home({ params }: { params: { id: string } }) {
               currentPage={{path:'/page',page:currentPage}}
               showTab={true}
             />
+            </main>
             <SideBar />
           </div>
         </div>

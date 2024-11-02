@@ -80,7 +80,7 @@ export default function PostView({
   };
 
   return (
-    <main className="content-inner">
+    <div className="content-inner">
       {showTab && (
         <div className={styles.postTab}>
           <div
@@ -120,6 +120,6 @@ export default function PostView({
       {["new", "Three.js", "Jamstack", "UI/UX"].map((category, index) =>
         renderPosts(category, index)
       )}
-    </main>
+    </div>
   );
 }
