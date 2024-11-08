@@ -41,7 +41,6 @@ ul {
 
 main {
   padding-right: 2em;
-  width: calc(100% - 2em);
 }
 
 img {
@@ -62,6 +61,16 @@ img {
   .content__wrapper {
     padding-top: 75px;
   }
+}
+
+.main_content{
+  width: calc(100% - 2em);
+}
+
+.top{
+  padding-right: 0;
+  background-color: #F5F5F5;
+  
 }
 
 .content {

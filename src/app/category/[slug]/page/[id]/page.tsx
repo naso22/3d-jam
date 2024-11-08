@@ -64,7 +64,7 @@ export default async function Home({
       <div className="content__wrapper">
         <div className="content post">
           <div className="content__inner">
-            <main className="blog-list-page">
+            <main className="blog-list-page main_content">
               <BreadcrumbComponent breadcrumbData={breadcrumbData} />
               <h1>{blogList.contents[0].category[0].title} 記事の一覧</h1>
               <PostView

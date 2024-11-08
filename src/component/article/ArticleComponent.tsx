@@ -19,7 +19,7 @@ export default function ArticleComponent({
   ];
   return (
     <>
-      <main className={styles.postMain}>
+      <main className={`${styles.postMain} main_content`}>
         <BreadcrumbComponent breadcrumbData={breadcrumbData} />
         <section>
           <article className={`${styles.articleWrapper} article`}>

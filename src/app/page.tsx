@@ -1,64 +1,97 @@
+"use client";
+
+import BlogCard from "@/component/card/BlogCard";
 import Footer from "@/component/layouts/Footer";
-import PostView from "@/component/postView/PostView";
-import SideBar from "@/component/sideBar/SideBar";
-import SlideShow from "@/component/slideShow/SlideShow";
+import ParticleCube from "@/component/particleCube/ParticleCube";
 import { client } from "@/libs/client";
-import { site } from '@/models/site';
-import type { Metadata } from 'next';
+import styles from "./page.module.scss";
 
-export const metadata: Metadata = {
-  title: `${site.title} | ${site.subTitle}`,
-  description: site.description,
-};
-
-export default async function Home() {
+export default async function App() {
   const blogList = await client
     .get({
       endpoint: "blog",
-      queries: { limit: 6 },
+      queries: { limit: 3 },
     })
     .then((res) => res);
-
-  const categoresList = ["835ils8h-m9", "dxsdioak6fo"];
-
-  const categoryBlog = [];
-
-  for (const category of categoresList) {
-    const categoryBlogList = await client
-      .get({
-        endpoint: "blog",
-        queries: { limit: 6, filters: `category[contains]${category}` },
-      })
-      .then((res) => res);
-
-    categoryBlog.push(...categoryBlogList.contents);
-  }
-
-  const totalBlogList = {
-    newBlog: blogList.contents,
-    categoryBlog: categoryBlog,
-  };
-
   return (
-    <div>
-      <div className="content__wrapper">
-        <SlideShow />
-        <div className="content post">
-          <div className="content__inner">
-            <main>
-              <PostView
-                blogList={totalBlogList}
-                totalCount={blogList.totalCount}
-                limit={6}
-                currentPage={{ path: "/page", page: 1 }}
-                showTab={true}
-              />
-            </main>
-            <SideBar />
+    <>
+      <main className="content__wrapper top">
+        <div className="fv">
+          <div className={styles.fv_inner}>
+            <ParticleCube />
+            <div className={styles.main}>
+              <h1 className={styles.main_title}>3D-Jam</h1>
+              <p className={styles.sub_title}>
+                高速でモダンなWEBサイト制作
+                <br />
+              </p>
+            </div>
           </div>
         </div>
-        <Footer />
-      </div>
-    </div>
+        <div className={styles.section}>
+          <div className={styles.service}>
+            <div className="service_inner" >
+              <h2 className={styles.title}>Service</h2>
+              <div className={styles.service_content}>
+                <div className={`${styles.box} ${styles.box1}`}>
+                  <div>3D × Jamstack HP制作</div>
+                  <p className={`${styles.discription}`}>
+                    高速な読み込み速度やモバイル対応がしやすいことから、検索エンジンの評価が向上し、結果としてアクセス数の増加が期待できます。
+                  </p>
+                </div>
+                <div className={`${styles.box} ${styles.box2}`}>
+                <div>Jamstack HP制作</div>
+                  <p className={`${styles.discription}`}>
+                    高速な読み込み速度やモバイル対応がしやすいことから、検索エンジンの評価が向上し、結果としてアクセス数の増加が期待できます。
+                  </p>
+                </div>
+                <div className={`${styles.box} ${styles.box3}`}>
+                <div>フロントエンド開発</div>
+                  <p className={`${styles.discription}`}>
+                    高速な読み込み速度やモバイル対応がしやすいことから、検索エンジンの評価が向上し、結果としてアクセス数の増加が期待できます。
+                  </p>
+                </div>
+                <div className={`${styles.box} ${styles.box3}`}>
+                <div>フロントエンド開発</div>
+                  <p className={`${styles.discription}`}>
+                    高速な読み込み速度やモバイル対応がしやすいことから、検索エンジンの評価が向上し、結果としてアクセス数の増加が期待できます。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.blog}>
+          <div className="service_inner">
+            <div className={styles.blog_inner}>
+              <h2 className={styles.title}>Blog</h2>
+              <div className={styles.blog_content}>
+                {blogList.contents.map((blog, index) => {
+                  return <BlogCard key={index} blog={blog} />;
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.about}>
+          <div className="service_inner">
+            <div className={styles.about_content}>
+              <div className={styles.about_title}>
+                <div className={styles.title}>About Me</div>
+                <p>私について</p>
+              </div>
+              <p>
+                東京都江戸川区を拠点にフロントエンドエンジニアとしており、
+                <br />
+                モダンな技術スタックを駆使した、UXに優れたWEBサイト構築を得意としています。
+                <br />
+                コミュニケーションを通じ、クライアントのビジネスに最適なデジタルソリューションをご提案致します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

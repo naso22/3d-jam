@@ -4,7 +4,7 @@ import "./globals.scss";
 import type { Metadata } from 'next'
 import { blog } from '@/models/site';
 
-const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400"] });
+const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400","300"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL( `https://${blog.domain}/`),
@@ -29,6 +29,7 @@ async function getNavItems() {
   // SSGのためのデータ取得
   return [
     { name: "ホーム", href: "/" },
+    { name: "記事", href: "/blog" },
     { name: "お問い合わせ", href: "/contact" },
   ];
 }
