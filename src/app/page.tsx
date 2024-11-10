@@ -115,6 +115,7 @@ export default async function App() {
                   height="16"
                   viewBox="0 0 20 16"
                   fill="none"
+                  className={styles.arrow_icon}
                 >
                   <path
                     d="M16.175 9H0.5V7H16.175L10.575 1.4L12 0L20 8L12 16L10.575 14.6L16.175 9Z"
