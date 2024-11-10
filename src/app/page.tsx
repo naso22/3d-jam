@@ -2,6 +2,7 @@ import BlogCard from "@/component/card/BlogCard";
 import Footer from "@/component/layouts/Footer";
 import ParticleCube from "@/component/particleCube/ParticleCube";
 import { client } from "@/libs/client";
+import Link from "next/link";
 import styles from "./page.module.scss";
 
 type BlogCategory = {
@@ -36,11 +37,13 @@ export default async function App() {
           <div className={styles.fv_inner}>
             <ParticleCube />
             <div className={styles.main}>
-              <h1 className={styles.main_title}>3D-Jam</h1>
-              <p className={styles.sub_title}>
-                高速でモダンなWEBサイト制作
-                <br />
-              </p>
+              <div className={styles.main_inner}>
+                <h1 className={styles.main_title}>3D-Jam</h1>
+                <p className={styles.sub_title}>
+                  高速でモダンなWEBサイト制作
+                  <br />
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -105,7 +108,7 @@ export default async function App() {
                   コミュニケーションを通じ、クライアントのビジネスに最適なデジタルソリューションをご提案致します。
                 </p>
               </div>
-              <div className={styles.arrow}>
+              <Link href={"/contact"} className={styles.arrow}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -118,7 +121,7 @@ export default async function App() {
                     fill="#E8EAED"
                   />
                 </svg>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

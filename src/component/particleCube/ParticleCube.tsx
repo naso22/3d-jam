@@ -63,8 +63,8 @@ export default function ParticleCube() {
   return (
     <Canvas
       //   className={styles.canvas}
-      camera={{ position: [0, 0, 5.7] }}
-      style={{ height: "700px" }}
+      camera={{ position: [0, 0, 5.5] }}
+      style={{ height: "90vh" }}
     >
       <ParticleCube />
     </Canvas>

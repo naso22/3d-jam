@@ -61,7 +61,7 @@ export default async function Home({ params }: { params: { id: string } }) {
         <SlideShow />
         <div className="content post">
           <div className="content__inner">
-            <main>
+            <main className="main_content">
               <PostView
                 blogList={totalBlogList}
                 totalCount={blogList.totalCount}
