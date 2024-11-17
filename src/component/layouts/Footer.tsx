@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`${styles.mdFlex} ${styles.mdJustifyBetween}`}>
         <h1 className={styles.footerLogo}>
-          <a href="/">3D-Jam</a>
+          <a href="/">Jam Man</a>
         </h1>
         <div className={styles.grid}>
           <div className={styles.footerContent}>

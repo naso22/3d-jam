@@ -38,9 +38,13 @@ export default async function App() {
             <ParticleCube />
             <div className={styles.main}>
               <div className={styles.main_inner}>
-                <h1 className={styles.main_title}>3D-Jam</h1>
+                <h1 className={styles.main_title}>
+                  Create
+                  <br />
+                  Jamstack
+                </h1>
                 <p className={styles.sub_title}>
-                  高速でモダンなWEBサイト制作
+                  モダンな技術で高速で安全なWEBサイトを作ります
                   <br />
                 </p>
               </div>
@@ -53,28 +57,42 @@ export default async function App() {
               <h2 className={styles.title}>Service</h2>
               <div className={styles.service_content}>
                 <div className={`${styles.box} ${styles.box1}`}>
-                  <div>3D × Jamstack HP制作</div>
-                  <p className={`${styles.discription}`}>
-                    高速な読み込み速度やモバイル対応がしやすいことから、検索エンジンの評価が向上し、結果としてアクセス数の増加が期待できます。
-                  </p>
+                  <Link href={""}>
+                    <div>Jamstack HP制作</div>
+                    <p className={`${styles.discription}`}>
+                      Jamstack技術を使って高速で安全なWEBサイトを構築いたします。{" "}
+                      <br />
+                      SEO対策、レスポンジブ対応を行い、集客できる強いホームページを制作します
+                    </p>
+                  </Link>
                 </div>
+
                 <div className={`${styles.box} ${styles.box2}`}>
-                  <div>Jamstack HP制作</div>
-                  <p className={`${styles.discription}`}>
-                    高速な読み込み速度やモバイル対応がしやすいことから、検索エンジンの評価が向上し、結果としてアクセス数の増加が期待できます。
-                  </p>
+                  <Link href={""}>
+                    <div>Jamstack LP制作</div>
+                    <p className={`${styles.discription}`}>
+                      Jamstack技術を使って高速で安全なランディングページを作成いたします。{" "}
+                      <br />
+                      SEO対策、レスポンジブ対応を行い、CVを上げるLPを制作します
+                    </p>
+                  </Link>
                 </div>
                 <div className={`${styles.box} ${styles.box3}`}>
-                  <div>フロントエンド開発</div>
-                  <p className={`${styles.discription}`}>
-                    高速な読み込み速度やモバイル対応がしやすいことから、検索エンジンの評価が向上し、結果としてアクセス数の増加が期待できます。
-                  </p>
+                  <Link href={""}>
+                    <div>サイトの高速化</div>
+                    <p className={`${styles.discription}`}>
+                      Jamstack技術を使ってサイトの表示速度を向上させます <br />
+                      googleからの評価がアップし、サイト回遊率を低下させることができます。
+                    </p>
+                  </Link>
                 </div>
                 <div className={`${styles.box} ${styles.box3}`}>
-                  <div>フロントエンド開発</div>
-                  <p className={`${styles.discription}`}>
-                    高速な読み込み速度やモバイル対応がしやすいことから、検索エンジンの評価が向上し、結果としてアクセス数の増加が期待できます。
-                  </p>
+                  <Link href={""}>
+                    <div>フロントエンド開発</div>
+                    <p className={`${styles.discription}`}>
+                      Next.js,React,TypeScriptによるフロントエンド開発を中心にコーディングをしています。
+                    </p>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -101,9 +119,9 @@ export default async function App() {
                   <p>お問い合わせ</p>
                 </div>
                 <p>
-                  東京都江戸川区を拠点にフロントエンドエンジニアとしており、
+                  東京都江戸川区を拠点にフロントエンドエンジニアをしています。
                   <br />
-                  モダンな技術スタックを駆使した、UXに優れたWEBサイト構築を得意としています。
+                  Next.js,React,TypeScriptを使った、サイト制作/アプリ開発を得意としています。
                   <br />
                   コミュニケーションを通じ、クライアントのビジネスに最適なデジタルソリューションをご提案致します。
                 </p>

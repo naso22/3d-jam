@@ -4,27 +4,41 @@
 
 .main {
   position: absolute;
-  top: 34%;
+  top: 32%;
   width: 100%;
   // max-width: 1180px;
   // margin: 0 auto;
+  @media screen and (max-width: 760px) {
+    top: 54%;
+  }
   &_inner {
-    max-width: 1080px;
-    padding: 0 40px;
+    max-width: 1200px;
+    padding: 0 30px;
     margin: 0 auto;
   }
 }
 
 .main_title {
   font-size: 96px;
-  color: #235c9b;
+  background: -webkit-linear-gradient(0deg, #235c9b, #1588b9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 300;
+  line-height: 100px;
+  letter-spacing: 0.15rem;
+  @media screen and (max-width: 760px) {
+    font-size: 50px;
+    line-height: 50px;
+  }
 }
 
 .sub_title {
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 25px;
   letter-spacing: 0.15rem;
+  @media screen and (max-width: 760px) {
+    font-size: 15px;
+  }
 }
 
 .title {
@@ -58,18 +72,35 @@
 }
 
 .box {
-  //   background: -webkit-linear-gradient(0deg, #235c9b, #1176a2);
-  //   color: white;
   margin-top: 40px;
   padding-bottom: 25px;
-  border-bottom: 1px solid #235c9b;
+  position: relative;
   font-size: 20px;
   color: #235c9b;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* 幅は常に100% */
+    height: 1px;
+    background-color: #235c9b;
+    transform: scaleX(1); /* 初期はスケール0で見えない */
+    transform-origin: left; /* 左から右へ伸びる */
+    transition: transform 0.4s ease; /* アニメーション設定 */
+  }
+
+  &:hover::after {
+    transform: scaleX(0); /* ホバー時にスケールを元に戻す */
+  }
 
   .discription {
     padding-top: 25px;
     font-size: 14px;
     color: #333;
+    line-height: 20px;
+    letter-spacing: 0.1em;
   }
   //   box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.29);
 }
