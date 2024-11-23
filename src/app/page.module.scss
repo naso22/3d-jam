@@ -64,35 +64,82 @@
 .service_content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 25px;
   width: 100%;
+  margin-top: 60px;
+  padding-bottom: 20px;
   @media screen and (max-width: 760px) {
     grid-template-columns: 1fr;
   }
 }
 
 .box {
-  margin-top: 40px;
-  padding-bottom: 25px;
+  // margin-top: 40px;
   position: relative;
   font-size: 20px;
   color: #235c9b;
+  padding: 20px;
+  min-height: 200px;
+  border-radius: 8px;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  border: 1px solid #ebebeb;
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%; /* 幅は常に100% */
-    height: 1px;
-    background-color: #235c9b;
-    transform: scaleX(1); /* 初期はスケール0で見えない */
-    transform-origin: left; /* 左から右へ伸びる */
-    transition: transform 0.4s ease; /* アニメーション設定 */
+  .more_icon{
+    // width: 40px;
+    float: right;
+      margin-top: 20px;
+    visibility: hidden;
+  }
+  .service_title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    border: 1px solid #cbd5f9;
+    .more_icon{
+      // width: 40px;
+      visibility: visible;
+      
+    }
   }
 
-  &:hover::after {
-    transform: scaleX(0); /* ホバー時にスケールを元に戻す */
+  
+
+  .icon {
+    display: flex;
+    flex-shrink: 0;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 60px;
+    z-index: 2;
+    gap: 60px;
+    border-radius: 100px;
+    color: #ffffff;
+
+    background: -webkit-linear-gradient(0deg, #235c9b, #1588b9);
+    box-shadow: 1px 5px 8.5px #08527d41;
+    transition: 0.3s;
+    @media screen and (max-width: 780px) {
+      height: 80px;
+      width: 80px;
+      transition: transform 0.3s;
+    }
+
+    &::after {
+      border-radius: 100vmax;
+      content: "";
+      height: 100%;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      transition: opacity var(--transition), transform var(--transition);
+      width: 100%;
+    }
   }
 
   .discription {
@@ -101,6 +148,7 @@
     color: #333;
     line-height: 20px;
     letter-spacing: 0.1em;
+    height: 70px;
   }
   //   box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.29);
 }

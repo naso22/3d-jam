@@ -1,10 +1,13 @@
 import BlogCard from "@/component/card/BlogCard";
+import AnaliuticsIcon from "@/component/icon/Analiytics";
+import Develop from "@/component/icon/Develop";
+import DocumentIcon from "@/component/icon/Document";
+import PcIcon from "@/component/icon/Pc";
 import Footer from "@/component/layouts/Footer";
 import ParticleCube from "@/component/particleCube/ParticleCube";
 import { client } from "@/libs/client";
 import Link from "next/link";
 import styles from "./page.module.scss";
-
 type BlogCategory = {
   id: string;
   title: string;
@@ -58,40 +61,104 @@ export default async function App() {
               <div className={styles.service_content}>
                 <div className={`${styles.box} ${styles.box1}`}>
                   <Link href={""}>
-                    <div>Jamstack HP制作</div>
+                    <div className={styles.service_title}>
+                      <span className={styles.icon}>
+                        <PcIcon />
+                      </span>
+                      Jamstack HP制作
+                    </div>
                     <p className={`${styles.discription}`}>
                       Jamstack技術を使って高速で安全なWEBサイトを構築いたします。{" "}
                       <br />
                       SEO対策、レスポンジブ対応を行い、集客できる強いホームページを制作します
                     </p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#818181"
+                      className={styles.more_icon}
+                      
+                    >
+                      <path d="m547.69-267.69-28.31-28.77L682.92-460H200v-40h482.92L519.38-663.54l28.31-28.77L760-480 547.69-267.69Z" />
+                    </svg>
                   </Link>
                 </div>
 
                 <div className={`${styles.box} ${styles.box2}`}>
                   <Link href={""}>
-                    <div>Jamstack LP制作</div>
+                    <div className={styles.service_title}>
+                      <span className={styles.icon}>
+                        <DocumentIcon />
+                      </span>
+                      Jamstack LP制作
+                    </div>
                     <p className={`${styles.discription}`}>
                       Jamstack技術を使って高速で安全なランディングページを作成いたします。{" "}
                       <br />
                       SEO対策、レスポンジブ対応を行い、CVを上げるLPを制作します
                     </p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#818181"
+                      className={styles.more_icon}
+                      
+                    >
+                      <path d="m547.69-267.69-28.31-28.77L682.92-460H200v-40h482.92L519.38-663.54l28.31-28.77L760-480 547.69-267.69Z" />
+                    </svg>
                   </Link>
                 </div>
                 <div className={`${styles.box} ${styles.box3}`}>
                   <Link href={""}>
-                    <div>サイトの高速化</div>
-                    <p className={`${styles.discription}`}>
-                      Jamstack技術を使ってサイトの表示速度を向上させます <br />
-                      googleからの評価がアップし、サイト回遊率を低下させることができます。
-                    </p>
-                  </Link>
-                </div>
-                <div className={`${styles.box} ${styles.box3}`}>
-                  <Link href={""}>
-                    <div>フロントエンド開発</div>
+                    <div className={styles.service_title}>
+                      <span className={styles.icon}>
+                        <Develop />
+                      </span>
+                      フロントエンド開発
+                    </div>
                     <p className={`${styles.discription}`}>
                       Next.js,React,TypeScriptによるフロントエンド開発を中心にコーディングをしています。
                     </p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#818181"
+                      className={styles.more_icon}
+                      
+                    >
+                      <path d="m547.69-267.69-28.31-28.77L682.92-460H200v-40h482.92L519.38-663.54l28.31-28.77L760-480 547.69-267.69Z" />
+                    </svg>
+                  </Link>
+                </div>
+                <div className={`${styles.box} ${styles.box3}`}>
+                  <Link href={""}>
+                    <div className={styles.service_title}>
+                      <span className={styles.icon}>
+                        <AnaliuticsIcon />
+                      </span>
+                      サイト保守・運用
+                    </div>
+                    <p className={`${styles.discription}`}>
+                      KW選定やgoogle analyticsを使ったデータ分析により
+                      CV率、集客力の向上を目指します
+                    </p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#818181"
+                      className={styles.more_icon}
+                      
+                    >
+                      <path d="m547.69-267.69-28.31-28.77L682.92-460H200v-40h482.92L519.38-663.54l28.31-28.77L760-480 547.69-267.69Z" />
+                    </svg>
                   </Link>
                 </div>
               </div>
