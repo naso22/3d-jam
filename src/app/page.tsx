@@ -70,8 +70,9 @@ export default async function App() {
                     <p className={`${styles.discription}`}>
                       Jamstack技術を使って高速で安全なWEBサイトを構築いたします。{" "}
                       <br />
-                      SEO対策、レスポンジブ対応を行い、集客できる強いホームページを制作します
+                      SEO対策、レスポンジブ対応を行い、集客できる強いHPを制作します
                     </p>
+                    <div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="24px"
@@ -83,6 +84,7 @@ export default async function App() {
                     >
                       <path d="m547.69-267.69-28.31-28.77L682.92-460H200v-40h482.92L519.38-663.54l28.31-28.77L760-480 547.69-267.69Z" />
                     </svg>
+                    </div>
                   </Link>
                 </div>
 
@@ -189,8 +191,6 @@ export default async function App() {
                   東京都江戸川区を拠点にフロントエンドエンジニアをしています。
                   <br />
                   Next.js,React,TypeScriptを使った、サイト制作/アプリ開発を得意としています。
-                  <br />
-                  コミュニケーションを通じ、クライアントのビジネスに最適なデジタルソリューションをご提案致します。
                 </p>
               </div>
               <Link href={"/contact"} className={styles.arrow}>
