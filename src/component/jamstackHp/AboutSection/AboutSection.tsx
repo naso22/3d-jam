@@ -111,7 +111,7 @@ export default function AboutSection() {
             <img className="fit-picture" src="/image.png" />
           </div>
         </div>
-        <h2>Jamstackと従来サイトとの比較</h2>
+        <h2>Jamstackと<br className={styles.breack}/>従来サイトとの比較</h2>
         <ComparisonTable />
       </div>
     </section>

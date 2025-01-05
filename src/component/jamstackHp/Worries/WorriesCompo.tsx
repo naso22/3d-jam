@@ -15,7 +15,7 @@ export default function WorriesCompo() {
         <div>
           <h2>こんなお悩みありませんか？</h2>
           <div className={styles.worries_inner}>
-            <div  className={styles.worries_img}>
+            <div className={styles.worries_img}>
               <div style={{ width: "100%" }}>
                 <BackgroundShape />
               </div>

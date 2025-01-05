@@ -2,7 +2,7 @@
   background-color: white;
   padding: 50px;
   @media screen and (max-width: 730px) {
-    padding: 30px;
+    padding: 10px;
   }
 
   h2 {
@@ -56,6 +56,9 @@
       text-align: center;
     }
   }
+  ul {
+    padding-top: 20px;
+  }
 }
 
 .serviceCard2 {
@@ -72,6 +75,9 @@
   color: white;
   .serviceDetails {
     max-width: 720px;
+  }
+  ul {
+    padding-top: 20px;
   }
   @media screen and (max-width: 1000px) {
     padding: 30px 30px;

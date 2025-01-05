@@ -5,7 +5,7 @@
   text-align: center;
   padding: 50px;
   @media screen and (max-width: 730px) {
-    padding: 30px;
+    padding: 10px;
   }
   h2 {
     margin: 0;
@@ -21,10 +21,10 @@
     gap: 30px;
     grid-template-columns: 1fr 1fr 1fr;
     @media screen and (max-width: 860px) {
-        grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
     }
     @media screen and (max-width: 650px) {
-        grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
     }
 
     .meritNumber {
@@ -32,6 +32,9 @@
       font-size: 32px;
       font-weight: lighter;
       margin-bottom: 30px;
+      @media screen and (max-width: 650px) {
+        margin-bottom: 0;
+      }
     }
 
     .meritItem {
@@ -43,12 +46,19 @@
         width: 100px;
         height: 100px;
         // width: 30%;
+        @media screen and (max-width: 650px) {
+          width: 80px;
+          height: 80px;
+        }
       }
       .meritTitle {
         margin-top: 10px;
         margin-bottom: 25px;
         font-weight: bold;
-        font-size: 24px;
+        font-size: 20px;
+        @media screen and (max-width: 650px) {
+          margin-bottom: 10px;
+        }
       }
     }
   }
