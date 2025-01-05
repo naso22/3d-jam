@@ -1,0 +1,106 @@
+/* styles/PriceSection.module.css */
+.priceSection {
+  padding: 50px;
+  background-color: #f9f9f9;
+  text-align: center;
+  @media screen and (max-width: 730px) {
+    padding: 30px;
+  }
+}
+
+.priceTitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  background: -webkit-linear-gradient(0deg, #11319a, #3078c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.priceContainer {
+  display:grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  @media (max-width: 880px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.priceCard {
+  background-color: white;
+  // border-radius: 8px;
+  padding: 1.5rem;
+  
+
+  text-align: left;
+  box-shadow: 1px 5px 15px rgba(44, 91, 176, 0.29);
+}
+
+.lp {
+  color: #235c9b;
+}
+
+.hp {
+  color: #1176a2;
+}
+
+.odermade {
+  color: #1f00dc;
+}
+
+.planTitle {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.price {
+  font-size: 32px;
+  color: #454545;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contactButton,
+.detailsButton {
+  padding: 0.5rem 1rem;
+  color: white;
+  background: -webkit-linear-gradient(0deg, #285aac, #11319a);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.contactButton:hover,
+.detailsButton:hover {
+  background-color: #005bb5;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.features li {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  border-bottom: solid 1px #d9d9d9;
+  padding: 10px;
+}

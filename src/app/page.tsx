@@ -60,7 +60,7 @@ export default async function App() {
               <h2 className={styles.title}>Service</h2>
               <div className={styles.service_content}>
                 <div className={`${styles.box} ${styles.box1}`}>
-                  <Link href={""}>
+                  <Link href={"/jamstackHp"}>
                     <div className={styles.service_title}>
                       <span className={styles.icon}>
                         <PcIcon />

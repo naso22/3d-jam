@@ -1,0 +1,55 @@
+.merit {
+  background-color: #f4faff;
+  background: -webkit-linear-gradient(45deg, #3078c8, #11319a);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 50px;
+  @media screen and (max-width: 730px) {
+    padding: 30px;
+  }
+  h2 {
+    margin: 0;
+    padding: 50px 0 20px 0;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  &_inner {
+    max-width: 1200px;
+    padding: 50px 0px;
+    margin: 0 auto;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    @media screen and (max-width: 860px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 650px) {
+        grid-template-columns: 1fr;
+    }
+
+    .meritNumber {
+      text-align: start;
+      font-size: 32px;
+      font-weight: lighter;
+      margin-bottom: 30px;
+    }
+
+    .meritItem {
+      border: 3px solid #ffffff;
+      border-radius: 5px;
+      padding: 20px;
+      .meritIcon {
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        // width: 30%;
+      }
+      .meritTitle {
+        margin-top: 10px;
+        margin-bottom: 25px;
+        font-weight: bold;
+        font-size: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.process {
+  background-color: #204e99;
+  text-align: center;
+  color: #ffffff;
+  padding: 50px;
+  padding-bottom: 100px;
+}
+
+.processInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; /* クオートなし */
+  align-items: center; /* クオートなし */
+  margin-top: 60px;
+  justify-content: space-between;
+  @media (max-width: 1100px) {
+    display: grid;
+    grid-template-areas:
+      "item1 item2 item3"
+      ". . item4"
+      "item7 item6 item5";
+    gap: 20px;
+    // flex-direction: row-reverse;
+    // grid-auto-flow: dense; /* 要素の配置を調整 */
+    // direction: rtl;
+  }
+
+  @media (max-width: 550px) {
+    display: grid;
+    grid-template-areas:
+      "item1"
+      "item2"
+      "item3"
+      "item4"
+      "item5"
+      "item6"
+      "item7";
+    gap: 20px;
+  }
+
+  svg {
+    margin: 0 auto;
+    @media (max-width: 550px) {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.processNode {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.arrow {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 20%;
+  aspect-ratio: 1; /* 幅と高さの比率を1:1に設定 */
+  z-index: 2;
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+  }
+  @media (max-width: 550px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+  // @media (max-width: 500px) {
+  //   width: 70%;
+  // }
+  
+  img {
+    width: 40%;
+    object-fit: cover;
+  }
+  &::before {
+    border: 2px solid;
+    border-radius: 100vmax;
+    content: "";
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transition: opacity var(--transition), transform var(--transition);
+    width: 100%;
+  }
+}
+
+.arrowUnder {
+  @media screen and (max-width: 1100px) {
+    // grid-column: 2 / span 4;
+    transform: rotate(90deg);
+  }
+  @media (max-width: 550px) {
+    transform: rotate(90deg);
+  }
+}
+
+.arrowLeft {
+  @media screen and (max-width: 1100px) {
+    // grid-column: 2 / span 4;
+    transform: rotate(180deg);
+  }
+  @media (max-width: 550px) {
+    transform: rotate(90deg);
+  }
+}
+
+.item1 {
+  grid-area: item1;
+}
+.item2 {
+  grid-area: item2;
+}
+.item3 {
+  grid-area: item3;
+}
+.item4 {
+  grid-area: item4;
+}
+.item5 {
+  grid-area: item5;
+}
+.item6 {
+  grid-area: item6;
+}
+.item7 {
+  grid-area: item7;
+}
