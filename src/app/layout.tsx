@@ -1,13 +1,13 @@
 import Header from "@/component/layouts/Header";
+import { blog } from "@/models/site";
+import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.scss";
-import type { Metadata } from 'next'
-import { blog } from '@/models/site';
 
-const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400","300"] });
+const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400", "300"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL( `https://${blog.domain}/`),
+  metadataBase: new URL(`https://${blog.domain}/`),
   title: `${blog.title} | ${blog.subTitle}`,
   description: blog.description,
   openGraph: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: blog.title,
     description: blog.description,
     url: `https://${blog.domain}/`,
-    type: 'website',
+    type: "website",
     images: `https://${blog.domain}/images/ogp.png`,
   },
   // twitter: {
@@ -30,7 +30,8 @@ async function getNavItems() {
   return [
     { name: "ホーム", href: "/" },
     { name: "サービス", href: "/" },
-    { name: "記事", href: "/blog" },
+    { name: "ブログ", href: "/blog" },
+    { name: "私について", href: "/" },
     { name: "お問い合わせ", href: "/contact" },
   ];
 }

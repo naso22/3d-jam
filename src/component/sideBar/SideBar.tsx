@@ -14,7 +14,7 @@ export default function SideBar() {
               alt=""
             />
           </div> */}
-          <p className={styles.widget__name}>さかもと</p>
+          <p className={styles.widget__name}>長野 氷那</p>
           <div className={styles.widget__text}>
             3D技術とJamstackを利用してWEBサイト制作をしています
           </div>

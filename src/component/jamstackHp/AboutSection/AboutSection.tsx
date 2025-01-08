@@ -19,7 +19,7 @@ export default function AboutSection() {
         </p>
       </div>
 
-      <div className={styles.cardContainer}>
+      <div className={`${styles.cardContainer}`}>
         {/* Card 1 */}
         <div className={styles.card}>
           <div className={styles.cardHeader}>従来のWEBサイト</div>
@@ -27,7 +27,7 @@ export default function AboutSection() {
             アクセスごとに、サーバーとデータベースのやりとり、ページの生成・配信といった処理が必須のため、
             表示速度、セキュリティリスクなどの課題があります。
           </div>
-          <div className={styles.diagram}>
+          <div className={`${styles.diagram}`} >
             <div className={styles.box}>
               <ServerIcon />
               <span>サーバー</span>
@@ -65,8 +65,8 @@ export default function AboutSection() {
             表示速度、セキュリティリスクなどの課題があります。
           </div>
           <div
-            className={styles.diagram}
-            style={{ gridTemplateColumns: "1fr" }}
+            className={`${styles.diagram} ${styles.jamstack}`}
+            style={{ gridTemplateColumns: "1fr", }}
           >
             <div
               className={styles.box}

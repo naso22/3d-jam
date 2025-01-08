@@ -75,7 +75,7 @@
   }
 }
 
-.breack{
+.breack {
   display: none;
   @media screen and (max-width: 650px) {
     display: block;
@@ -94,9 +94,19 @@
   @media screen and (max-width: 430px) {
     padding: 40px;
     padding-left: 50px;
+    padding-top: 0;
   }
   @media screen and (max-width: 400px) {
     // padding: 40px;
+  }
+}
+
+.jamstack {
+  @media screen and (max-width: 400px) {
+    transform: translateX(-20px);
+    .arrow{
+      width: 250px;
+    }
   }
 }
 .diagram .box {
