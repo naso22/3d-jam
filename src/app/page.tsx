@@ -6,6 +6,7 @@ import PcIcon from "@/component/icon/Pc";
 import Footer from "@/component/layouts/Footer";
 import ParticleCube from "@/component/particleCube/ParticleCube";
 import { client } from "@/libs/client";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.scss";
 type BlogCategory = {
@@ -57,7 +58,8 @@ export default async function App() {
         <div className={styles.section}>
           <div className={styles.service}>
             <div className="service_inner">
-              <h2 className={styles.title}>Service</h2>
+              <h2 className={styles.title_eng}>Service</h2>
+              <p className={styles.title}>サービス内容</p>
               <div className={styles.service_content}>
                 <div className={`${styles.box} ${styles.box1}`}>
                   <Link href={"/jamstackHp"}>
@@ -73,17 +75,16 @@ export default async function App() {
                       SEO対策、レスポンジブ対応を行い、集客できる強いHPを制作します
                     </p>
                     <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24px"
-                      viewBox="0 -960 960 960"
-                      width="24px"
-                      fill="#818181"
-                      className={styles.more_icon}
-                      
-                    >
-                      <path d="m547.69-267.69-28.31-28.77L682.92-460H200v-40h482.92L519.38-663.54l28.31-28.77L760-480 547.69-267.69Z" />
-                    </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#818181"
+                        className={styles.more_icon}
+                      >
+                        <path d="m547.69-267.69-28.31-28.77L682.92-460H200v-40h482.92L519.38-663.54l28.31-28.77L760-480 547.69-267.69Z" />
+                      </svg>
                     </div>
                   </Link>
                 </div>
@@ -108,7 +109,6 @@ export default async function App() {
                       width="24px"
                       fill="#818181"
                       className={styles.more_icon}
-                      
                     >
                       <path d="m547.69-267.69-28.31-28.77L682.92-460H200v-40h482.92L519.38-663.54l28.31-28.77L760-480 547.69-267.69Z" />
                     </svg>
@@ -132,7 +132,6 @@ export default async function App() {
                       width="24px"
                       fill="#818181"
                       className={styles.more_icon}
-                      
                     >
                       <path d="m547.69-267.69-28.31-28.77L682.92-460H200v-40h482.92L519.38-663.54l28.31-28.77L760-480 547.69-267.69Z" />
                     </svg>
@@ -157,7 +156,6 @@ export default async function App() {
                       width="24px"
                       fill="#818181"
                       className={styles.more_icon}
-                      
                     >
                       <path d="m547.69-267.69-28.31-28.77L682.92-460H200v-40h482.92L519.38-663.54l28.31-28.77L760-480 547.69-267.69Z" />
                     </svg>
@@ -170,7 +168,8 @@ export default async function App() {
         <div className={styles.blog}>
           <div className="service_inner">
             <div className={styles.blog_inner}>
-              <h2 className={styles.title}>Blog</h2>
+              <h2 className={styles.title_eng}>Blog</h2>
+              <p className={styles.title}>ブログ</p>
               <div className={styles.blog_content}>
                 {blogList.contents.map((blog, index) => {
                   return <BlogCard key={index} blog={blog} />;
@@ -179,7 +178,38 @@ export default async function App() {
             </div>
           </div>
         </div>
-        <div className={styles.about}>
+
+        <div className={styles.aboutMe}>
+          <div className={styles.aboutMe_wrapper}>
+            <div>
+              <img
+                src="/shirokuma.png" // 画像のパスを指定
+                className={styles.aboutIcon}
+                // alt="Description of image"
+                // width={280} // 画像の幅を指定
+                // height={280} // 画像の高さを指定
+              />
+            </div>
+          </div>
+          <div className={styles.textWrapper}>
+            <p>長野　冷</p>
+            <p>
+              東京都江戸川区を拠点にフロントエンドエンジニアとしており、モダンな技術スタックを駆使した、UXに優れたWEBサイト構築を得意としています。コミュニケーションを通じ、クライアントのビジネスに最適なデジタルソリューションをご提案致します。
+            </p>
+            <p>
+              Next.js / React / Vue.js TypeScript / Vercel / ampyfly / vercel /
+              Figuma ...
+            </p>
+            <p>
+              Twitter　Instagram 
+            </p>
+            <Link href={`/contact`}>
+              <p className={styles.contact_btn}>お問い合わせ</p>
+            </Link>
+          </div>
+        </div>
+
+        {/* <div className={styles.about}>
           <div className="service_inner">
             <div className={styles.about_content}>
               <div>
@@ -210,7 +240,7 @@ export default async function App() {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
       <Footer />
     </>

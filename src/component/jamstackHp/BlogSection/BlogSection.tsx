@@ -26,7 +26,8 @@ export default function BlogSection({ blogList }: BlogSectionProps) {
     <div className={styles.blog}>
       <div className="service_inner">
         <div className={styles.blog_inner}>
-          <h2 className={styles.title}>Blog</h2>
+          <h2 className={styles.title_eng}>Blog</h2>
+          <p className={styles.title}>ブログ</p>
           <div className={styles.blog_content}>
             {blogList.contents.map((blog, index) => {
               return <BlogCard key={index} blog={blog} />;

@@ -5,7 +5,8 @@ import styles from "./PriceSection.module.scss";
 export default function PriceSection() {
   return (
     <section className={styles.priceSection}>
-      <h2 className={styles.priceTitle}>Price</h2>
+      <h2 className={styles.priceTitle_eng}>Price</h2>
+      <p className={styles.priceTitle}>料金案内</p>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         {/* LPプラン */}
         <div className={styles.priceContainer}>

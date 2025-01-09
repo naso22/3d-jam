@@ -4,7 +4,8 @@ const ServicesSection = () => {
   return (
     <section className={styles.service}>
       <div className={styles.serviceInner}>
-        <h2 className="text-3xl font-bold mb-8 text-center">サービス内容</h2>
+        <h2 className={styles.serviceTitle_eng}>Service</h2>
+        <p className={styles.serviceTitle}>サービス内容</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1 */}
           <div className={styles.serviceCard}>

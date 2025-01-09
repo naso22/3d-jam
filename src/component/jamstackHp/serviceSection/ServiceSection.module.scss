@@ -7,7 +7,7 @@
 
   h2 {
     margin: 0;
-    padding: 50px 0 20px 0;
+
     font-size: 40px;
     font-weight: bold;
     background: -webkit-linear-gradient(0deg, #11319a, #3078c8);
@@ -15,11 +15,17 @@
     -webkit-text-fill-color: transparent;
     text-align: center;
   }
+  .serviceTitle {
+    text-align: center;
+    background: -webkit-linear-gradient(0deg, #11319a, #3078c8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+  }
 }
 
 .serviceInner {
   max-width: 1200px;
-  padding: 50px 0px;
   margin: 0 auto;
 }
 

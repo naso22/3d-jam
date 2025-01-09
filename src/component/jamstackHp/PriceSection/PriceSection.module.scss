@@ -8,16 +8,23 @@
   }
 }
 
-.priceTitle {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+.priceTitle_eng {
+  font-size: 40px;
+  margin: 0;
   background: -webkit-linear-gradient(0deg, #11319a, #3078c8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.priceTitle {
+  background: -webkit-linear-gradient(0deg, #11319a, #3078c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
 .priceContainer {
-  display:grid;
+  display: grid;
   gap: 20px;
   grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 30px;
@@ -35,7 +42,6 @@
   // border-radius: 8px;
   padding: 1.5rem;
   height: 560px;
-  
 
   text-align: left;
   box-shadow: 1px 5px 15px rgba(44, 91, 176, 0.29);

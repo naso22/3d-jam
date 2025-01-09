@@ -8,8 +8,8 @@ export default function ContactSection() {
           <div className={styles.about_content}>
             <div>
               <div className={styles.about_title}>
-                <div className={styles.title}>Contact</div>
-                <p>お問い合わせ</p>
+                <div className={styles.title_eng}>Contact</div>
+                <p className={styles.title}>お問い合わせ</p>
               </div>
               <p>
                 東京都江戸川区を拠点にフロントエンドエンジニアをしています。
