@@ -19,6 +19,9 @@ export async function generateStaticParams() {
   const totalCount = data.totalCount;
 
   // totalCountが0の場合は空の配列を返す
+  if (totalCount === 0) {
+    return [{ id: "1" }];
+  }
 
   const totalPages = Math.ceil(totalCount / limit); // ページ数を計算
 

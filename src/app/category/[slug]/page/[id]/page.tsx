@@ -26,6 +26,10 @@ export async function generateStaticParams() {
     const totalCount = blogList.totalCount;
     const totalPages = Math.ceil(totalCount / 8); // 1ページに8件表示する場合
 
+    if (!blogList.totalCount) {
+      return [{ id: "default", slug: "default" }];
+    }
+
     // 各カテゴリのページごとにパスを生成
     for (let i = 1; i <= totalPages; i++) {
       paths.push({
@@ -66,7 +70,7 @@ export default async function Home({
           <div className="content__inner">
             <main className="blog-list-page main_content">
               <BreadcrumbComponent breadcrumbData={breadcrumbData} />
-              <h1>{blogList.contents[0].category[0].title} 記事の一覧</h1>
+              <h1>{`${blogList.contents[0]?.category[0]?.title}記事の一覧`}</h1>
               <PostView
                 blogList={{ newBlog: blogList.contents }}
                 totalCount={blogList.totalCount}
