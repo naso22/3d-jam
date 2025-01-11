@@ -1,5 +1,20 @@
 import Footer from "@/component/layouts/Footer";
 import SideBar from "@/component/sideBar/SideBar";
+import { site } from "@/models/site";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `お問い合わせ | jamな男`,
+  description: "モダンなフロントエンド技術で高速で安全なWEBサイトを作ります",
+  openGraph: {
+    title: `お問い合わせ | jamな男`,
+    siteName: `${site.title} | ${site.subTitle} `,
+    description: 'モダンなフロントエンド技術で高速で安全なWEBサイトを作ります',
+    url: `https://${site.domain}/jamstackHp`,
+    type: "website",
+    images: `https://${site.domain}/images/ogp.png`,
+  },
+};
 
 export default function ContactPage() {
   return (

@@ -10,6 +10,27 @@ import ContactSection from "@/component/jamstackHp/ContactSection/ContactSection
 // import styles from "../page.module.scss";
 import { client } from "@/libs/client";
 import Footer from "@/component/layouts/Footer";
+import { site } from "@/models/site";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(`https://${site.domain}/jamstackHp`),
+  title: `Jamstackサイト制作 | 最新技術で集客と売上に加速を`,
+  description: 'モダンなフロントエンド技術で高速で安全なWEBサイトを作ります',
+  openGraph: {
+    title: `Jamstackサイト制作 | 最新技術で集客と売上に加速を`,
+    siteName: `${site.title} | ${site.subTitle} `,
+    description: 'モダンなフロントエンド技術で高速で安全なWEBサイトを作ります',
+    url: `https://${site.domain}/jamstackHp`,
+    type: "website",
+    images: `https://${site.domain}/images/ogp.png`,
+  },
+  // twitter: {
+  //   card: 'summary_large_image',
+  //   site: site.title,
+  //   images: `https://${site.domain}/images/ogp.png`,
+  // },
+};
 
 type BlogCategory = {
   id: string;
