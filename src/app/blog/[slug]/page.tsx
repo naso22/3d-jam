@@ -1,22 +1,23 @@
 // app/blog/[slug]/page.tsx
+import ArticleComponent from "@/component/article/ArticleComponent";
 import Footer from "@/component/layouts/Footer";
 import SideBar from "@/component/sideBar/SideBar";
 import { client } from "@/libs/client";
 import { blog } from "@/models/site";
 import { Metadata } from "next";
-import ArticleComponent from "@/component/article/ArticleComponent";
 export async function generateStaticParams() {
-  try {
-    const { contents } = await client.get({
-      endpoint: "blog",
-    });
-    return contents.map((article: { id: string }) => ({
-      slug: article.id,
-    }));
-  } catch (error) {
-    console.error("Error fetching blog articles:", error);
+  const { contents } = await client.get({
+    endpoint: "blog",
+  });
+  console.log(contents.totalCount);
+
+  if (!contents?.totalCount) {
     return [{ slug: "default" }];
   }
+
+  return contents.map((article: { id: string }) => ({
+    slug: article.id,
+  }));
 }
 
 // 2. Metadata生成
@@ -50,11 +51,13 @@ export const generateMetadata = async ({
     };
   } catch (error) {
     console.error("Error fetching metadata:", error);
-    return {openGraph: {
-      title:  "No Title",
-      description: "No description",
-      url: `https://${blog?.domain}/blog/${params.slug}`,
-    },};
+    return {
+      openGraph: {
+        title: "No Title",
+        description: "No description",
+        url: `https://${blog?.domain}/blog/${params.slug}`,
+      },
+    };
   }
 };
 
@@ -87,7 +90,7 @@ export default async function ArticlePage({
       contentId: params.slug,
     });
 
-    console.log(article + 'DDDDDDD')
+    console.log(article + "DDDDDDD");
 
     return (
       <>
