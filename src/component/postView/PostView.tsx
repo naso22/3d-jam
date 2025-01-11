@@ -95,14 +95,6 @@ export default function PostView({
           </div>
           <div
             className={`${styles.tab2} ${
-              selectedTab === "Three.js" ? styles.selected : ""
-            }`}
-            onClick={() => setSelectedTab("Three.js")}
-          >
-            Three.js
-          </div>
-          <div
-            className={`${styles.tab3} ${
               selectedTab === "Jamstack" ? styles.selected : ""
             }`}
             onClick={() => setSelectedTab("Jamstack")}
@@ -110,16 +102,24 @@ export default function PostView({
             Jamstack
           </div>
           <div
-            className={`${styles.tab4} ${
+            className={`${styles.tab3} ${
               selectedTab === "UI/UX" ? styles.selected : ""
             }`}
             onClick={() => setSelectedTab("UI/UX")}
           >
             UI/UX
           </div>
+          <div
+            className={`${styles.tab4} ${
+              selectedTab === "デザイン" ? styles.selected : ""
+            }`}
+            onClick={() => setSelectedTab("デザイン")}
+          >
+            デザイン
+          </div>
         </div>
       )}
-      {["new", "Three.js", "Jamstack", "UI/UX"].map((category, index) =>
+      {["new", "Jamstack", "UI/UX","デザイン"].map((category, index) =>
         renderPosts(category, index)
       )}
     </div>

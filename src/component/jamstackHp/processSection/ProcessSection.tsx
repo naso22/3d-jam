@@ -7,7 +7,8 @@ export default function ProcessSection() {
         <h2 className={styles.ProcessTitle_eng}>Work Flow</h2>
         <p className={styles.ProcessTitle}>制作フロー</p>
         <div>
-          最初のヒアリングから納品まで、定期的なミーティングや進捗報告を通じて、プロジェクトの進行状況を透明に共有。お客様のご意見やフィードバックを素早く反映し、常に最適な結果を目指します。
+          最初のヒアリングから納品まで、定期的なミーティングや進捗報告を通じて、プロジェクトの進行状況を共有。<br />
+          お客様のご意見やフィードバックを素早く反映し、常に最適な結果を目指します。
         </div>
         <div className={styles.processInner}>
           <div className={`${styles.arrow} ${styles.item1}`}>

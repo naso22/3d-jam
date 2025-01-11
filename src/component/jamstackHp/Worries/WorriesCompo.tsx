@@ -4,10 +4,10 @@ import IsomeSupport from "@/component/svgComponet/jamstackHP/Worreis/IsomeSuppor
 import styles from "./Worres.module.scss";
 export default function WorriesCompo() {
   const worriesList = [
-    "Webサイトの表示速度がいのでもっと早くしたい",
+    "Webサイトの表示速度が遅いのでもっと速くしたい",
     "現在のWebサイトではセキュリティーが不安",
     "Webサイトの運用コストを削減したい",
-    "Webサイトを使って集客をしたいが何をしたら良いのか分からない",
+    "パフォーマンスの良いWebサイトで直帰率を下げたい",
   ];
   return (
     <>

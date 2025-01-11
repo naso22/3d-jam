@@ -6,9 +6,10 @@ import PcIcon from "@/component/icon/Pc";
 import Footer from "@/component/layouts/Footer";
 import ParticleCube from "@/component/particleCube/ParticleCube";
 import { client } from "@/libs/client";
-import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.scss";
+import { site } from "@/models/site";
+import type { Metadata } from "next";
 type BlogCategory = {
   id: string;
   title: string;
@@ -25,6 +26,25 @@ type BlogPost = {
     url: string;
   };
   contents: BlogCategory[];
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL(`https://${site.domain}/`),
+  title: `${site.title} | ${site.subTitle}`,
+  description: site.description,
+  openGraph: {
+    title: `${site.title} | ${site.subTitle}`,
+    siteName: site.title,
+    description: site.description,
+    url: `https://${site.domain}/`,
+    type: "website",
+    images: `https://${site.domain}/images/ogp.png`,
+  },
+  // twitter: {
+  //   card: 'summary_large_image',
+  //   site: site.title,
+  //   images: `https://${site.domain}/images/ogp.png`,
+  // },
 };
 
 export default async function App() {
@@ -55,7 +75,7 @@ export default async function App() {
             </div>
           </div>
         </div>
-        <div className={styles.section}>
+        <div id="service" className={styles.section}>
           <div className={styles.service}>
             <div className="service_inner">
               <h2 className={styles.title_eng}>Service</h2>
@@ -67,12 +87,12 @@ export default async function App() {
                       <span className={styles.icon}>
                         <PcIcon />
                       </span>
-                      Jamstack HP制作
+                      Jamstack サイト制作
                     </div>
                     <p className={`${styles.discription}`}>
-                      Jamstack技術を使って高速で安全なWEBサイトを構築いたします。{" "}
+                      Jamstack技術を駆使した高速で安全なWebサイトを構築いたします。
                       <br />
-                      SEO対策、レスポンジブ対応を行い、集客できる強いHPを制作します
+                      SEO対策、レスポンジブ対応を行い、訪れたユーザーに信頼されるWebサイトを制作致します
                     </p>
                     <div>
                       <svg
@@ -95,12 +115,12 @@ export default async function App() {
                       <span className={styles.icon}>
                         <DocumentIcon />
                       </span>
-                      Jamstack LP制作
+                      Webデザイン
                     </div>
                     <p className={`${styles.discription}`}>
-                      Jamstack技術を使って高速で安全なランディングページを作成いたします。{" "}
+                      ニーズや目的に沿ったWebデザインを提案・制作いたします。
                       <br />
-                      SEO対策、レスポンジブ対応を行い、CVを上げるLPを制作します
+                      見やすく、伝わるを意識した、オリジナルなデザインを作成いたします
                     </p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +143,7 @@ export default async function App() {
                       フロントエンド開発
                     </div>
                     <p className={`${styles.discription}`}>
-                      Next.js,React,TypeScriptによるフロントエンド開発を中心にコーディングをしています。
+                      Next.js,React,TypeScriptを開発を中心にフロントエンド開発をいたします。
                     </p>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +185,7 @@ export default async function App() {
             </div>
           </div>
         </div>
-        <div className={styles.blog}>
+        <div className={styles.blog} id="blog">
           <div className="service_inner">
             <div className={styles.blog_inner}>
               <h2 className={styles.title_eng}>Blog</h2>
@@ -175,11 +195,16 @@ export default async function App() {
                   return <BlogCard key={index} blog={blog} />;
                 })}
               </div>
+              <div className={styles.blogMoreContent}>
+                <Link href={`/blog`}>
+                  <p className={styles.blog_btn}>ブログ一覧へ</p>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className={styles.aboutMe}>
+        <div className={styles.aboutMe} id="about">
           <div className={styles.aboutMe_wrapper}>
             <div>
               <img
@@ -194,53 +219,21 @@ export default async function App() {
           <div className={styles.textWrapper}>
             <p>長野　冷</p>
             <p>
-              東京都江戸川区を拠点にフロントエンドエンジニアとしており、モダンな技術スタックを駆使した、UXに優れたWEBサイト構築を得意としています。コミュニケーションを通じ、クライアントのビジネスに最適なデジタルソリューションをご提案致します。
+              東京都江戸川区を拠点にフロントエンドエンジニアをしています。
+              <br />
+              UI・UXに優れたWEBサイト制作を得意としています。
+              <br />
             </p>
             <p>
               Next.js / React / Vue.js TypeScript / Vercel / ampyfly / vercel /
-              Figuma ...
+              Figuma
             </p>
-            <p>
-              Twitter　Instagram 
-            </p>
+            <p className={styles.sns}><a href="https://x.com/wGOGNc30tFGCCiA">X</a></p>
             <Link href={`/contact`}>
               <p className={styles.contact_btn}>お問い合わせ</p>
             </Link>
           </div>
         </div>
-
-        {/* <div className={styles.about}>
-          <div className="service_inner">
-            <div className={styles.about_content}>
-              <div>
-                <div className={styles.about_title}>
-                  <div className={styles.title}>Contact</div>
-                  <p>お問い合わせ</p>
-                </div>
-                <p>
-                  東京都江戸川区を拠点にフロントエンドエンジニアをしています。
-                  <br />
-                  Next.js,React,TypeScriptを使った、サイト制作/アプリ開発を得意としています。
-                </p>
-              </div>
-              <Link href={"/contact"} className={styles.arrow}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="16"
-                  viewBox="0 0 20 16"
-                  fill="none"
-                  className={styles.arrow_icon}
-                >
-                  <path
-                    d="M16.175 9H0.5V7H16.175L10.575 1.4L12 0L20 8L12 16L10.575 14.6L16.175 9Z"
-                    fill="#E8EAED"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div> */}
       </main>
       <Footer />
     </>

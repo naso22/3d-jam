@@ -38,3 +38,26 @@
       flex-direction: column;
     }
   }
+
+  .blogMoreContent {
+    display: flex;
+    justify-content: end;
+  
+    a{
+      width: fit-content;
+      display: block;
+    }
+  }
+  
+  .blog_btn {
+    // background: -webkit-linear-gradient(0deg, #11319a, #3078c8);
+    color: #ffffff;
+    padding: 10px 10px;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    width: fit-content;
+    font-weight: bold;
+    margin-top: 30px;
+    border-bottom: 1px solid #ffffff;
+    margin-top: 30px;
+  }

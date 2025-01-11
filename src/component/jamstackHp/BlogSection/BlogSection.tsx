@@ -1,5 +1,6 @@
 import BlogCard from "@/component/card/BlogCard";
 import styles from "./BlogSection.module.scss";
+import Link from "next/link";
 type BlogCategory = {
   id: string;
   title: string;
@@ -9,17 +10,16 @@ type BlogCategory = {
   category: BlogCategory[];
 };
 
-type BlogSectionProps ={
-  blogList:{
+type BlogSectionProps = {
+  blogList: {
     id: string;
     title: string;
     mainVisual: {
       url: string;
     };
     contents: BlogCategory[];
-  }
-}
-
+  };
+};
 
 export default function BlogSection({ blogList }: BlogSectionProps) {
   return (
@@ -32,6 +32,11 @@ export default function BlogSection({ blogList }: BlogSectionProps) {
             {blogList.contents.map((blog, index) => {
               return <BlogCard key={index} blog={blog} />;
             })}
+          </div>
+          <div className={styles.blogMoreContent}>
+            <Link href={`/blog`}>
+              <p className={styles.blog_btn}>ブログ一覧へ</p>
+            </Link>
           </div>
         </div>
       </div>

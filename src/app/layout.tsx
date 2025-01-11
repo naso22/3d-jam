@@ -29,9 +29,9 @@ async function getNavItems() {
   // SSGのためのデータ取得
   return [
     { name: "ホーム", href: "/" },
-    { name: "サービス", href: "/" },
+    { name: "サービス", href: "/#service" },
     { name: "ブログ", href: "/blog" },
-    { name: "私について", href: "/" },
+    { name: "私について", href: "/#about" },
     { name: "お問い合わせ", href: "/contact" },
   ];
 }

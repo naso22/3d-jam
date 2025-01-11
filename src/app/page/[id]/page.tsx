@@ -3,19 +3,23 @@ import PostView from "@/component/postView/PostView";
 import SideBar from "@/component/sideBar/SideBar";
 import SlideShow from "@/component/slideShow/SlideShow";
 import { client } from "@/libs/client";
+import { blog } from "@/models/site";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `${blog.title} | ${blog.subTitle}`,
+  description: blog.description,
+};
 
 export async function generateStaticParams() {
-  // APIから記事データを取得
   const limit = 6; // 1ページあたりの表示件数
-  const response = await client
-    .get({
-      endpoint: "blog",
-    })
-    .then((res) => res);
+  const response = await client.get({ endpoint: "blog" });
   const data = await response;
 
-  // 総記事数を取得
   const totalCount = data.totalCount;
+
+  // totalCountが0の場合は空の配列を返す
+
   const totalPages = Math.ceil(totalCount / limit); // ページ数を計算
 
   // 各ページのパラメータを生成
@@ -36,7 +40,7 @@ export default async function Home({ params }: { params: { id: string } }) {
     })
     .then((res) => res);
 
-  const categoresList = ["835ils8h-m9", "dxsdioak6fo"];
+  const categoresList = ["835ils8h-m9", "dxsdioak6fo", "i46_ji_93mrf"];
   const categoryBlog = [];
 
   for (const category of categoresList) {

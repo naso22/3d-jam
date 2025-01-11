@@ -1,5 +1,5 @@
-import styles from './Footer.module.scss';
-
+import styles from "./Footer.module.scss";
+import Link from "next/link";
 export default function Footer() {
   return (
     <footer className={styles.footer}>
@@ -12,27 +12,26 @@ export default function Footer() {
             <p className={styles.footer__naviHeading}>FOLLOW US</p>
             <ul className={styles.footer__navi}>
               <li>
-                <a href="#">Twitter</a>
-              </li>
-              <li>
-                <a href="#">Instagram</a>
+                <a href="https://x.com/wGOGNc30tFGCCiA">Twitter</a>
               </li>
             </ul>
           </div>
           <div className={styles.footerContent}>
-            <p className={styles.footer__naviHeading}>ABOUT</p>
             <ul className={styles.footer__navi}>
               <li>
-                <a href="#">会社概要</a>
+                <Link href={"/"}>ホーム</Link>
               </li>
               <li>
-                <a href="#">お問い合わせ</a>
+                <Link  href={"/#service"}>サービス</Link>
               </li>
               <li>
-                <a href="#">サイトマップ</a>
+                <Link href={"/blog"}>ブログ</Link>
               </li>
               <li>
-                <a href="#">プライバシーポリシー</a>
+                <Link href={"/#about"}>私について</Link>
+              </li>
+              <li>
+                <Link href={"/contact"}>お問い合わせ</Link>
               </li>
             </ul>
           </div>
@@ -40,7 +39,8 @@ export default function Footer() {
       </div>
       <hr />
       <p className={styles.copyright}>
-        © 2023 <a href="https://jajaaan.co.jp/">JAJAAAN Inc.</a> All Rights Reserved.
+        © 2023 <a href="https://jajaaan.co.jp/">JAJAAAN Inc.</a> All Rights
+        Reserved.
       </p>
     </footer>
   );

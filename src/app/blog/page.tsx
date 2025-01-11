@@ -3,12 +3,12 @@ import PostView from "@/component/postView/PostView";
 import SideBar from "@/component/sideBar/SideBar";
 import SlideShow from "@/component/slideShow/SlideShow";
 import { client } from "@/libs/client";
-import { site } from '@/models/site';
+import { blog } from '@/models/site';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: `${site.title} | ${site.subTitle}`,
-  description: site.description,
+  title: `${blog.title} | ${blog.subTitle}`,
+  description: blog.description,
 };
 
 export default async function Home() {
@@ -19,7 +19,7 @@ export default async function Home() {
     })
     .then((res) => res);
 
-  const categoresList = ["835ils8h-m9", "dxsdioak6fo"];
+  const categoresList = ["835ils8h-m9", "dxsdioak6fo","i46_ji_93mrf"];
 
   const categoryBlog = [];
 

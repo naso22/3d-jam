@@ -14,9 +14,10 @@ export default function SideBar() {
               alt=""
             />
           </div> */}
-          <p className={styles.widget__name}>長野 氷那</p>
+          <p className={styles.widget__name}>長野 冷</p>
           <div className={styles.widget__text}>
-            3D技術とJamstackを利用してWEBサイト制作をしています
+            東京都江戸川区を拠点にフロントエンドエンジニアをしています。<br />
+            UI・UXに優れたWEBサイト制作を得意としています。
           </div>
         </div>
       </div>

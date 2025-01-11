@@ -1,15 +1,14 @@
 export const site = {
-  title: "3D-jam",
-  subTitle: "人を惹きつける3D技術と高速なJamstackでWEBサイトを制作します",
-  description: "3DデザインとJamstack技術でWEBサイトを制作いたします。WebGLやNext.js Vercelを用いたモダンな開発で高速で優れたサイトを制作いたします",
-  domain: "3d-jam",
+  title: "Jamsな男",
+  subTitle: "モダンなフロントエンド技術で高速で安全なJamstackWEBサイトを作ります",
+  description:
+    "東京都江戸川区を拠点にフロントエンドエンジニアをしていますUI・UXに優れたWEBサイト制作を得意としています。",
+  domain: "reiNagano",
 };
 
 export const blog = {
-    title: "3D-jamブログトップ",
-    subTitle: "3D技術やJamstackについてブログ記事を書いています",
-    description: "3D技術やJamstackについてブログ記事を書いています",
-    domain: "3d-jam",
-  };
-
-
+  title: "Jamなブログトップ",
+  subTitle: "Jamstackについてブログ記事を書いています",
+  description: "Jamstackについてブログ記事を書いています",
+  domain: "reiNagano/blog",
+};

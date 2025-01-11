@@ -14,7 +14,8 @@ export default function AboutSection() {
       <div>
         <h2>Jamstackとは？</h2>
         <p className={styles.aboutDescription}>
-          Jamstackは、最新のWebサイトやアプリケーションの開発手法です。<br />
+          Jamstackは、最新のWebサイトやアプリケーションの開発手法です。
+          <br />
           事前にページを生成することで、サーバー処理のプロセスが最適化され、高速で安全、そしてスケーラブルなWebサイトを構築することができます。
         </p>
       </div>
@@ -27,7 +28,7 @@ export default function AboutSection() {
             アクセスごとに、サーバーとデータベースのやりとり、ページの生成・配信といった処理が必須のため、
             表示速度、セキュリティリスクなどの課題があります。
           </div>
-          <div className={`${styles.diagram}`} >
+          <div className={`${styles.diagram}`}>
             <div className={styles.box}>
               <ServerIcon />
               <span>サーバー</span>
@@ -53,7 +54,9 @@ export default function AboutSection() {
         </div>
 
         {/* Icon */}
-        <div className={styles.rightIcon}><RightIcon /></div>
+        <div className={styles.rightIcon}>
+          <RightIcon />
+        </div>
 
         {/* Card 2 */}
         <div className={styles.card}>
@@ -61,12 +64,12 @@ export default function AboutSection() {
             Jamstackサイト
           </div>
           <div className={styles.cardContent}>
-            アクセスごとに、サーバーとデータベースのやりとり、ページの生成・配信といった処理が必須のため、
-            表示速度、セキュリティリスクなどの課題があります。
+            CDNから事前に生成されたページを提供するため、ページの表示が非常に高速になります。<br />
+            バックエンドのサーバーに依存しないため、攻撃対象が減り、より安全なシステム設計を実現しています。
           </div>
           <div
             className={`${styles.diagram} ${styles.jamstack}`}
-            style={{ gridTemplateColumns: "1fr", }}
+            style={{ gridTemplateColumns: "1fr" }}
           >
             <div
               className={styles.box}
@@ -103,15 +106,27 @@ export default function AboutSection() {
           </div>
           <div className={styles.techCard}>
             <div className={styles.techCardTitle}>フロントエンド</div>
-            <img className="fit-picture" src="/nextjs.png" style={{width:"40%"}} />
+            <img
+              className="fit-picture"
+              src="/nextjs.png"
+              style={{ width: "40%" }}
+            />
           </div>
           <div className={styles.techCard}>
             <div className={styles.techCardTitle}>ホスティング</div>
-            <img className="fit-picture" style={{width:"41%"}} src="/pngwing.png" />
+            <img
+              className="fit-picture"
+              style={{ width: "41%" }}
+              src="/pngwing.png"
+            />
             <img className="fit-picture" src="/image.png" />
           </div>
         </div>
-        <h2>Jamstackと<br className={styles.breack}/>従来サイトとの比較</h2>
+        <h2>
+          Jamstackと
+          <br className={styles.breack} />
+          従来サイトとの比較
+        </h2>
         <ComparisonTable />
       </div>
     </section>
