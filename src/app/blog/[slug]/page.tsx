@@ -5,7 +5,6 @@ import { client } from "@/libs/client";
 import { blog } from "@/models/site";
 import { Metadata } from "next";
 import ArticleComponent from "@/component/article/ArticleComponent";
-// 1. Static Params生成
 export async function generateStaticParams() {
   try {
     const { contents } = await client.get({
