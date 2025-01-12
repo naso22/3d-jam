@@ -1,7 +1,8 @@
 import BreadcrumbComponent from "@/component/breadcrumb/BreadcrumbComponent";
+import Link from "next/link";
 import styles from "./ArticleComponent.module.scss";
 type ArticleComponentProps = {
-  blogUrl:string;
+  blogUrl: string;
   title: string;
   mainVisual: string;
   articleContent: string;
@@ -31,6 +32,14 @@ export default function ArticleComponent({
                 className={styles.articleContent}
                 dangerouslySetInnerHTML={{ __html: articleContent }}
               />
+              <div>
+                <h2>Webのことならお任せください</h2>
+                <p>
+                  <Link href="/#about">私について　</Link>
+                  <Link href="/contact">お問い合わせ　</Link>
+                  <a href="https://x.com/wGOGNc30tFGCCiA">　X</a>
+                </p>
+              </div>
             </div>
           </article>
         </section>

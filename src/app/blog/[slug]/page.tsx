@@ -6,12 +6,12 @@ import { client } from "@/libs/client";
 import { blog } from "@/models/site";
 import { Metadata } from "next";
 export async function generateStaticParams() {
-  const { contents } = await client.get({
+  const { contents,totalCount } = await client.get({
     endpoint: "blog",
   });
-  console.log(contents.totalCount);
+  console.log(contents);
 
-  if (!contents?.totalCount) {
+  if (!totalCount) {
     return [{ slug: "default" }];
   }
 
@@ -89,8 +89,6 @@ export default async function ArticlePage({
       endpoint: "blog",
       contentId: params.slug,
     });
-
-    console.log(article + "DDDDDDD");
 
     return (
       <>
