@@ -4,7 +4,7 @@ import Develop from "@/component/icon/Develop";
 import DocumentIcon from "@/component/icon/Document";
 import PcIcon from "@/component/icon/Pc";
 import Footer from "@/component/layouts/Footer";
-import ParticleCube from "@/component/particleCube/ParticleCube";
+// import ParticleCube from "@/component/particleCube/ParticleCube";
 import { client } from "@/libs/client";
 import { site } from "@/models/site";
 import type { Metadata } from "next";
