@@ -4,7 +4,7 @@ import Develop from "@/component/icon/Develop";
 import DocumentIcon from "@/component/icon/Document";
 import PcIcon from "@/component/icon/Pc";
 import Footer from "@/component/layouts/Footer";
-// import ParticleCube from "@/component/particleCube/ParticleCube";
+import ParticleCube from "@/component/particleCube/ParticleCube";
 import { client } from "@/libs/client";
 import { site } from "@/models/site";
 import type { Metadata } from "next";
@@ -60,7 +60,7 @@ export default async function App() {
       <main className="content__wrapper top">
         <div className="fv">
           <div className={styles.fv_inner}>
-            {/* <ParticleCube /> */}
+            <ParticleCube />
             <div className={styles.main}>
               <div className={styles.main_inner}>
                 <h1 className={styles.main_title}>
