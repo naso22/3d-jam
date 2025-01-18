@@ -60,7 +60,7 @@ export default async function App() {
       <main className="content__wrapper top">
         <div className="fv">
           <div className={styles.fv_inner}>
-            <ParticleCube />
+            {/* <ParticleCube /> */}
             <div className={styles.main}>
               <div className={styles.main_inner}>
                 <h1 className={styles.main_title}>
