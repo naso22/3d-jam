@@ -52,7 +52,10 @@ export default function ParticleCube() {
     return (
       <group ref={groupRef} position={[2, 0, 0]}>
         {spheres.map((sphere, index) => (
-          <mesh key={index} position={sphere.position as [number, number, number]}>
+          <mesh
+            key={index}
+            position={sphere.position as [number, number, number]}
+          >
             <sphereGeometry args={[0.01, 16, 16]} />
             <meshStandardMaterial color={sphere.color} />
           </mesh>

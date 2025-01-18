@@ -1,5 +1,4 @@
 import styles from "./SideBar.module.scss";
-
 export default function SideBar() {
   return (
     <aside className={styles.insidesp}>
@@ -8,15 +7,10 @@ export default function SideBar() {
           プロフィール
         </h4>
         <div className={styles.widget__inner}>
-          {/* <div className={styles.profiel__img}>
-            <img
-              src="https://kyomoneyblog.com/wp-content/uploads/7051304f37a3653aa23d9cdad05e7688-96x96.png"
-              alt=""
-            />
-          </div> */}
           <p className={styles.widget__name}>長野 冷</p>
           <div className={styles.widget__text}>
-            東京都江戸川区を拠点にフロントエンドエンジニアをしています。<br />
+            東京都江戸川区を拠点にフロントエンドエンジニアをしています。
+            <br />
             UI・UXに優れたWEBサイト制作を得意としています。
           </div>
         </div>

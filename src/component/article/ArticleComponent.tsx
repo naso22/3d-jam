@@ -1,6 +1,7 @@
 import BreadcrumbComponent from "@/component/breadcrumb/BreadcrumbComponent";
 import Link from "next/link";
 import styles from "./ArticleComponent.module.scss";
+import Image from "next/image";
 type ArticleComponentProps = {
   blogUrl: string;
   title: string;
@@ -27,7 +28,14 @@ export default function ArticleComponent({
           <article className={`${styles.articleWrapper} article`}>
             <div className={styles.articleHead}>
               <h1 dangerouslySetInnerHTML={{ __html: title }} />
-              <img src={mainVisual} alt="" />
+              <Image
+                src={mainVisual} // 画像のパスを指定
+                className={styles.aboutIcon}
+                alt="aiconイメージ"
+                layout="responsive"
+                width={100} // 画像の幅を指定
+                height={100} // 画像の高さを指定
+              />
               <div
                 className={styles.articleContent}
                 dangerouslySetInnerHTML={{ __html: articleContent }}

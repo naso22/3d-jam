@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./BlogCard.module.scss";
 
@@ -23,10 +24,13 @@ export default function BlogCard({ blog }: BlogPost) {
           <article className={styles.card02}>
             <div className={styles.cardHeader02}>
               <figure className={styles.card__thumbnail02}>
-                <img
+                <Image
                   src={blog.mainVisual?.url}
                   className={styles.card__image02}
                   alt={blog.title}
+                  layout="responsive" // これでレスポンシブに設定
+                  width={100} // 比率を保ちながら、親要素に合わせて調整されます
+                  height={100} // 上記のwidthに対する高さの比率が維持されます
                 />
               </figure>
               <time className={styles.card__day}>2024.01.16</time>

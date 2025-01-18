@@ -6,10 +6,11 @@ import PcIcon from "@/component/icon/Pc";
 import Footer from "@/component/layouts/Footer";
 import ParticleCube from "@/component/particleCube/ParticleCube";
 import { client } from "@/libs/client";
-import Link from "next/link";
-import styles from "./page.module.scss";
 import { site } from "@/models/site";
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./page.module.scss";
 type BlogCategory = {
   id: string;
   title: string;
@@ -115,7 +116,7 @@ export default async function App() {
                       <span className={styles.icon}>
                         <DocumentIcon />
                       </span>
-                      Webデザイン
+                      ヘッドレスCMS 構築/導入
                     </div>
                     <p className={`${styles.discription}`}>
                       ニーズや目的に沿ったWebデザインを提案・制作いたします。
@@ -207,12 +208,13 @@ export default async function App() {
         <div className={styles.aboutMe} id="about">
           <div className={styles.aboutMe_wrapper}>
             <div>
-              <img
-                src="/shirokuma.png" // 画像のパスを指定
+              <Image
+                src="/shikrokuma.jpg" // 画像のパスを指定
                 className={styles.aboutIcon}
-                // alt="Description of image"
-                // width={280} // 画像の幅を指定
-                // height={280} // 画像の高さを指定
+                alt="aiconイメージ"
+                layout="responsive"
+                width={100} // 画像の幅を指定
+                height={100} // 画像の高さを指定
               />
             </div>
           </div>
@@ -228,7 +230,9 @@ export default async function App() {
               Next.js / React / Vue.js TypeScript / Vercel / ampyfly / vercel /
               Figuma
             </p>
-            <p className={styles.sns}><a href="https://x.com/wGOGNc30tFGCCiA">X</a></p>
+            <p className={styles.sns}>
+              <a href="https://x.com/wGOGNc30tFGCCiA">X</a>
+            </p>
             <Link href={`/contact`}>
               <p className={styles.contact_btn}>お問い合わせ</p>
             </Link>

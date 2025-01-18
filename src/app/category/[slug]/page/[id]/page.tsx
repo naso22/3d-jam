@@ -26,9 +26,9 @@ export async function generateStaticParams() {
     const totalCount = blogList.totalCount;
     const totalPages = Math.ceil(totalCount / 8); // 1ページに8件表示する場合
 
-    if (!blogList.totalCount) {
-      return [{ id: "default", slug: "default" }];
-    }
+    // if (!blogList.totalCount) {
+    //   return [{ id: "default", slug: "default" }];
+    // }
 
     // 各カテゴリのページごとにパスを生成
     for (let i = 1; i <= totalPages; i++) {

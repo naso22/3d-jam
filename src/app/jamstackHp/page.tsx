@@ -15,10 +15,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${site.domain}/jamstackHp`),
-  title: `Jamstackサイト制作 | 最新技術で集客と売上に加速を`,
+  title: `Jamstackサイト制作 | サービス`,
   description: 'モダンなフロントエンド技術で高速で安全なWEBサイトを作ります',
   openGraph: {
-    title: `Jamstackサイト制作 | 最新技術で集客と売上に加速を`,
+    title: `Jamstackサイト制作 | サービス`,
     siteName: `${site.title} | ${site.subTitle} `,
     description: 'モダンなフロントエンド技術で高速で安全なWEBサイトを作ります',
     url: `https://${site.domain}/jamstackHp`,
