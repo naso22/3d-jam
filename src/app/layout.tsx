@@ -44,6 +44,7 @@ export default async function RootLayout({
   const navItems = await getNavItems();
   return (
     <html lang="ja">
+      <head></head>
       <body className={notoSansJP.className}>
         <Header navItems={navItems} />
         {children}

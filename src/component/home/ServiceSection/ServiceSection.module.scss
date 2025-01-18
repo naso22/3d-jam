@@ -1,0 +1,113 @@
+.service {
+  margin: 0 auto;
+  max-width: 1180px;
+}
+
+.service_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  width: 100%;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  @media screen and (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.box {
+  // margin-top: 40px;
+  position: relative;
+  font-size: 20px;
+  color: #235c9b;
+  padding: 20px;
+  min-height: 200px;
+  border-radius: 8px;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  border: 1px solid #dbdbdb;
+
+  .more_icon {
+    float: right;
+    margin-top: 20px;
+    visibility: hidden;
+  }
+  .service_title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @media screen and (max-width: 430px) {
+      flex-direction: column;
+    }
+  }
+  &:hover {
+    transform: translateY(-3px);
+    border: 1px solid #cbd5f9;
+    .more_icon {
+      visibility: visible;
+    }
+  }
+
+  .icon {
+    display: flex;
+    flex-shrink: 0;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 60px;
+    z-index: 2;
+    gap: 60px;
+    border-radius: 100px;
+    color: #ffffff;
+
+    background: -webkit-linear-gradient(0deg, #2470c6, #11319a);
+    box-shadow: 1px 5px 8.5px #08527d41;
+    transition: 0.3s;
+    @media screen and (max-width: 780px) {
+      height: 80px;
+      width: 80px;
+      transition: transform 0.3s;
+    }
+
+    &::after {
+      border-radius: 100vmax;
+      content: "";
+      height: 100%;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      transition: opacity var(--transition), transform var(--transition);
+      width: 100%;
+    }
+  }
+
+  .discription {
+    padding-top: 25px;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+  }
+}
+
+.sub_title {
+  font-size: 16px;
+  margin-top: 25px;
+  letter-spacing: 0.15rem;
+  @media screen and (max-width: 760px) {
+    font-size: 15px;
+  }
+}
+
+.title_eng {
+  font-size: 34px;
+  color: #11319a;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.title {
+  color: #11319a;
+  font-weight: bold;
+}

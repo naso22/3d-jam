@@ -24,17 +24,12 @@ export async function generateStaticParams() {
       .then((res) => res);
 
     const totalCount = blogList.totalCount;
-    const totalPages = Math.ceil(totalCount / 8); // 1ページに8件表示する場合
+    const totalPages = Math.ceil(totalCount / 8); 
 
-    // if (!blogList.totalCount) {
-    //   return [{ id: "default", slug: "default" }];
-    // }
-
-    // 各カテゴリのページごとにパスを生成
     for (let i = 1; i <= totalPages; i++) {
       paths.push({
         id: i.toString(),
-        slug: category.id, // 各カテゴリのidをslugとして使用
+        slug: category.id, 
       });
     }
   }
