@@ -4,8 +4,6 @@ import FirstView from "@/component/home/firstView/FirstView";
 import ServiceSection from "@/component/home/ServiceSection/ServiceSection";
 import Footer from "@/component/layouts/Footer";
 import { client } from "@/libs/client";
-import { site } from "@/models/site";
-import type { Metadata } from "next";
 import styles from "./page.module.scss";
 type BlogCategory = {
   id: string;
@@ -23,25 +21,6 @@ type BlogPost = {
     url: string;
   };
   contents: BlogCategory[];
-};
-
-export const metadata: Metadata = {
-  metadataBase: new URL(`https://${site.domain}/`),
-  title: `${site.title} | ${site.subTitle}`,
-  description: site.description,
-  openGraph: {
-    title: `${site.title} | ${site.subTitle}`,
-    siteName: site.title,
-    description: site.description,
-    url: `https://${site.domain}/`,
-    type: "website",
-    images: `https://${site.domain}/images/ogp.png`,
-  },
-  // twitter: {
-  //   card: 'summary_large_image',
-  //   site: site.title,
-  //   images: `https://${site.domain}/images/ogp.png`,
-  // },
 };
 
 export default async function App() {

@@ -1,5 +1,5 @@
 import Header from "@/component/layouts/Header";
-import { blog } from "@/models/site";
+import { site } from "@/models/site";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.scss";
@@ -7,16 +7,16 @@ import "./globals.scss";
 const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400", "300"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`https://${blog.domain}/`),
-  title: `${blog.title} | ${blog.subTitle}`,
-  description: blog.description,
+  metadataBase: new URL(`https://${site.domain}/`),
+  title: `${site.title} | ${site.subTitle}`,
+  description: site.description,
   openGraph: {
-    title: `${blog.title} | ${blog.subTitle}`,
-    siteName: blog.title,
-    description: blog.description,
-    url: `https://${blog.domain}/`,
+    title: `${site.title} | ${site.subTitle}`,
+    siteName: site.title,
+    description: site.description,
+    url: `https://${site.domain}/`,
     type: "website",
-    images: `https://${blog.domain}/images/ogp.png`,
+    images: `https://${site.domain}/images/ogp.png`,
   },
   // twitter: {
   //   card: 'summary_large_image',
@@ -44,7 +44,6 @@ export default async function RootLayout({
   const navItems = await getNavItems();
   return (
     <html lang="ja">
-      <head></head>
       <body className={notoSansJP.className}>
         <Header navItems={navItems} />
         {children}
