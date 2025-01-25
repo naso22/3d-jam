@@ -5,21 +5,22 @@ import ServiceSection from "@/component/home/ServiceSection/ServiceSection";
 import Footer from "@/component/layouts/Footer";
 import styles from "./page.module.scss";
 
-async function getBlogList() {
-  const res = await fetch("https://3d-jam.microcms.io/api/v1/blog?limit=3", {
-    headers: {
-      "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7",
-    },
-  });
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  const data = await res.json();
-  return data;
-}
+// async function getBlogList() {
+//   const res = await fetch("https://3d-jam.microcms.io/api/v1/blog?limit=3", {
+//     headers: {
+//       "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7",
+//       cache: "no-store"
+//     },
+//   });
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
+//   const data = await res.json();
+//   return data;
+// }
 
 export default async function App() {
-  const blogList = await getBlogList();
+  // const blogList = await getBlogList();
   return (
     <>
       <main className="content__wrapper top">
@@ -28,7 +29,7 @@ export default async function App() {
           <ServiceSection />
         </div>
         <div className={styles.blog} id="blog">
-          <BlogSection blogList={blogList} />
+          <BlogSection  />
         </div>
 
         <div className={styles.aboutMe} id="about">

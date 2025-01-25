@@ -19,11 +19,26 @@ type BlogPost = {
   contents: BlogCategory[];
 };
 
-type BlogSectionProps = {
-  blogList: BlogPost;
-};
+// type BlogSectionProps = {
+//   blogList: BlogPost;
+// };
 
-export default function BlogSection({ blogList }: BlogSectionProps) {
+async function getBlogList() {
+  const res = await fetch("https://3d-jam.microcms.io/api/v1/blog?limit=3", {
+    headers: {
+      "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7",
+    },
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  const data = await res.json();
+  return data;
+}
+
+export default async function BlogSection() {
+  const blogList: BlogPost = await getBlogList();
   return (
     <>
       <div className="service_inner">
