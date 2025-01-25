@@ -3,34 +3,19 @@ import BlogSection from "@/component/home/BlogSection/BlogSection";
 import FirstView from "@/component/home/firstView/FirstView";
 import ServiceSection from "@/component/home/ServiceSection/ServiceSection";
 import Footer from "@/component/layouts/Footer";
-import { client } from "@/libs/client";
 import styles from "./page.module.scss";
-// type BlogCategory = {
-//   id: string;
-//   title: string;
-//   mainVisual: {
-//     url: string;
-//   };
-//   category: BlogCategory[];
-// };
 
-// type BlogPost = {
-//   id: string;
-//   title: string;
-//   mainVisual: {
-//     url: string;
-//   };
-//   contents: BlogCategory[];
-// };
-
-async function getBlogList(){
-  const res = await client.get(
-    {
-      endpoint: "blog",
-      queries: { limit: 3 },
+async function getBlogList() {
+  const res = await fetch("https://3d-jam.microcms.io/api/v1/blog?limit=3", {
+    headers: {
+      "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7",
     },
-  );
-  return res;
+  });
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  const data = await res.json();
+  return data;
 }
 
 export default async function App() {
