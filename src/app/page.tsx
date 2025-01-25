@@ -5,31 +5,36 @@ import ServiceSection from "@/component/home/ServiceSection/ServiceSection";
 import Footer from "@/component/layouts/Footer";
 import { client } from "@/libs/client";
 import styles from "./page.module.scss";
-type BlogCategory = {
-  id: string;
-  title: string;
-  mainVisual: {
-    url: string;
-  };
-  category: BlogCategory[];
-};
+// type BlogCategory = {
+//   id: string;
+//   title: string;
+//   mainVisual: {
+//     url: string;
+//   };
+//   category: BlogCategory[];
+// };
 
-type BlogPost = {
-  id: string;
-  title: string;
-  mainVisual: {
-    url: string;
-  };
-  contents: BlogCategory[];
-};
+// type BlogPost = {
+//   id: string;
+//   title: string;
+//   mainVisual: {
+//     url: string;
+//   };
+//   contents: BlogCategory[];
+// };
 
-export default async function App() {
-  const blogList: BlogPost = await client
-    .get({
+async function getBlogList(){
+  const res = await client.get(
+    {
       endpoint: "blog",
       queries: { limit: 3 },
-    })
-    .then((res) => res);
+    },
+  );
+  return res;
+}
+
+export default async function App() {
+  const blogList = await getBlogList();
   return (
     <>
       <main className="content__wrapper top">
