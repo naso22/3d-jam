@@ -19,10 +19,6 @@ type BlogPost = {
   contents: BlogCategory[];
 };
 
-// type BlogSectionProps = {
-//   blogList: BlogPost;
-// };
-
 async function getBlogList() {
   const res = await fetch("https://3d-jam.microcms.io/api/v1/blog?limit=3", {
     headers: {
