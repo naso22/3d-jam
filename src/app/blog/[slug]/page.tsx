@@ -6,11 +6,9 @@ import { client } from "@/libs/client";
 import { blog } from "@/models/site";
 import { Metadata } from "next";
 export async function generateStaticParams() {
-  const { contents,totalCount } = await client.get({
+  const { contents, totalCount } = await client.get({
     endpoint: "blog",
   });
-  console.log(contents);
-
   if (!totalCount) {
     return [{ slug: "default" }];
   }
@@ -43,6 +41,7 @@ export const generateMetadata = async ({
     });
 
     return {
+      title: article?.title,
       openGraph: {
         title: article?.title || "No Title",
         description: article?.description || "No description",

@@ -24,7 +24,7 @@ async function getBlogList() {
     headers: {
       "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7",
     },
-    cache: "no-store",
+    // cache: "no-store",
   });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
