@@ -46,7 +46,7 @@ export default function ServiceSection() {
                   <span className={styles.icon}>
                     <DocumentIcon />
                   </span>
-                  ヘッドレスCMS 構築/導入
+                  ホームページ制作
                 </div>
                 <p className={`${styles.discription}`}>
                   ニーズや目的に沿ったWebデザインを提案・制作いたします。
@@ -71,7 +71,7 @@ export default function ServiceSection() {
                   <span className={styles.icon}>
                     <Develop />
                   </span>
-                  フロントエンド開発
+                  マーケティング支援
                 </div>
                 <p className={`${styles.discription}`}>
                   Next.js,React,TypeScriptを開発を中心にフロントエンド開発をいたします。
@@ -94,7 +94,7 @@ export default function ServiceSection() {
                   <span className={styles.icon}>
                     <AnaliuticsIcon />
                   </span>
-                  サイト保守・運用
+                  システム開発
                 </div>
                 <p className={`${styles.discription}`}>
                   KW選定やgoogle analyticsを使ったデータ分析により

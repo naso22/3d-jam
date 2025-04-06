@@ -22,7 +22,7 @@ export default function AboutSection() {
         <p>
           東京都江戸川区を拠点にフロントエンドエンジニアをしています。
           <br />
-          UI・UXに優れたWEBサイト制作を得意としています。
+          モダンな技術を駆使してUI・UXに優れたホームページ制作を得意としています。
           <br />
         </p>
         <p>

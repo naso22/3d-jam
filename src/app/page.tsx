@@ -29,7 +29,7 @@ export default async function App() {
           <ServiceSection />
         </div>
         <div className={styles.blog} id="blog">
-          <BlogSection  />
+          <BlogSection />
         </div>
 
         <div className={styles.aboutMe} id="about">
