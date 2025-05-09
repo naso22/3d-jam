@@ -56,7 +56,7 @@ export default function SlideShow({blogList}:PostViewProps) {
           }}
         >
           {
-  blogList.newBlog?.slice(0, 4).map((blog) => {
+  blogList?.newBlog?.slice(0, 4).map((blog) => {
     return (
 <SwiperSlide key={blog.id}>
 <Link href={`/blog/${blog.id}`}>
