@@ -6,8 +6,27 @@ import styles from "./SlideShow.module.scss";
 // Import Swiper styles
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import Link from "next/link";
 
-export default function SlideShow() {
+type BlogPost = {
+  id: string;
+  title: string;
+  mainVisual: {
+    url: string;
+  };
+  category: BlogCategory[];
+};
+
+type BlogCategory = {
+  id: string;
+  title: string;
+};
+
+type PostViewProps = {
+  blogList: { newBlog: BlogPost[]; categoryBlog?: BlogPost[] };
+};
+
+export default function SlideShow({blogList}:PostViewProps) {
   return (
     <>
       <div className={styles.FirstView}>
@@ -36,30 +55,22 @@ export default function SlideShow() {
             },
           }}
         >
-          <SwiperSlide>
-            <img
-              src="https://www.front-blog.com/wp-content/themes/MyBlogTem/asset/img/noname.png"
-              alt=""
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="https://www.front-blog.com/wp-content/themes/MyBlogTem/asset/img/noname.png"
-              alt=""
-            />{" "}
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="https://www.front-blog.com/wp-content/themes/MyBlogTem/asset/img/noname.png"
-              alt=""
-            />{" "}
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="https://www.front-blog.com/wp-content/themes/MyBlogTem/asset/img/noname.png"
-              alt=""
-            />{" "}
-          </SwiperSlide>
+          {
+  blogList.newBlog?.slice(0, 4).map((blog) => {
+    return (
+<SwiperSlide key={blog.id}>
+<Link href={`/blog/${blog.id}`}>
+        <img
+          src={blog.mainVisual?.url}
+          alt=""
+        />
+         </Link>
+      </SwiperSlide>
+     
+      
+    );
+  })
+}
         </Swiper>
       </div>
     </>

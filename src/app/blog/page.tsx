@@ -42,7 +42,7 @@ export default async function Home() {
   return (
     <div>
       <div className="content__wrapper">
-        <SlideShow />
+        <SlideShow blogList={totalBlogList}/>
         <div className="content post">
           <div className="content__inner">
             <main className="main_content">

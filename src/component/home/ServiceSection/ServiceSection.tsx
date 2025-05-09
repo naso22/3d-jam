@@ -22,8 +22,6 @@ export default function ServiceSection() {
                 </div>
                 <p className={`${styles.discription}`}>
                   Jamstack技術を駆使した高速で安全なWebサイトを構築いたします。
-                  <br />
-                  SEO対策、レスポンジブ対応を行い、訪れたユーザーに信頼されるWebサイトを制作致します
                 </p>
                 <div>
                   <svg
@@ -49,9 +47,7 @@ export default function ServiceSection() {
                   ホームページ制作
                 </div>
                 <p className={`${styles.discription}`}>
-                  ニーズや目的に沿ったWebデザインを提案・制作いたします。
-                  <br />
-                  見やすく、伝わるを意識した、オリジナルなデザインを作成いたします
+                  ニーズや目的に沿ったホームページを構築いたします。
                 </p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +70,7 @@ export default function ServiceSection() {
                   マーケティング支援
                 </div>
                 <p className={`${styles.discription}`}>
-                  Next.js,React,TypeScriptを開発を中心にフロントエンド開発をいたします。
+                  SNS運用やLINE構築などを駆使してWebマーケティングを支援いたします
                 </p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -97,8 +93,7 @@ export default function ServiceSection() {
                   システム開発
                 </div>
                 <p className={`${styles.discription}`}>
-                  KW選定やgoogle analyticsを使ったデータ分析により
-                  CV率、集客力の向上を目指します
+                  抱えている悩みを解決できるシステムを構築いたします
                 </p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

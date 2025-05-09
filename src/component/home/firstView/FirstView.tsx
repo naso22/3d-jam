@@ -14,7 +14,8 @@ export default function FirstView() {
                 Jamstack
               </h1>
               <p className={styles.sub_title}>
-                モダンな技術で高速で安全なWEBサイトを作ります
+              高速でハイセキュリティ <br />
+              安心して長く使えるWebサイト構築します
                 <br />
               </p>
             </div>
