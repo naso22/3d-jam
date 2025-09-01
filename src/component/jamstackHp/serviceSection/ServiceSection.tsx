@@ -1,4 +1,5 @@
 import styles from "./ServiceSection.module.scss";
+import Image from "next/image";
 
 const ServicesSection = () => {
   return (
@@ -9,10 +10,12 @@ const ServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1 */}
           <div className={styles.serviceCard}>
-            <img
+            <Image
               src="/service01.png"
               alt="提案"
               className="mb-4 w-full h-32 object-contain"
+              width={512}
+              height={256}
             />
             <div>
               <h3 className="text-xl font-semibold mb-2">要望にあったご提案</h3>
@@ -52,20 +55,24 @@ const ServicesSection = () => {
               </div>
             </div>
             <div className={styles.imgContent}>
-              <img
+              <Image
                 src="/Data.png"
-                alt="提案"
+                alt="データ"
                 className="mb-4 w-full h-32 object-contain"
+                width={512}
+                height={256}
               />
             </div>
           </div>
 
           {/* Card 3 */}
           <div className={styles.serviceCard}>
-            <img
+            <Image
               src="/hoshu.png"
-              alt="提案"
+              alt="保守"
               className="mb-4 w-full h-32 object-contain"
+              width={512}
+              height={256}
             />
             <div>
               <h3 className="text-xl font-semibold mb-2">

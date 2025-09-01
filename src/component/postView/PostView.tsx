@@ -17,6 +17,7 @@ type BlogPost = {
     url: string;
   };
   category: BlogCategory[];
+  updatedAt: string;
 };
 
 type PostViewProps = {

@@ -8,6 +8,7 @@ type BlogCategory = {
     url: string;
   };
   category: BlogCategory[];
+  updatedAt: string;
 };
 
 type BlogSectionProps = {

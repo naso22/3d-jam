@@ -19,7 +19,7 @@ export default function Footer() {
           <div className={styles.footerContent}>
             <ul className={styles.footer__navi}>
               <li>
-                <Link href={"/"}>ホーム</Link>
+                <Link href={"/"}>ホー</Link>
               </li>
               <li>
                 <Link  href={"/#service"}>サービス</Link>

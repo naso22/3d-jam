@@ -1,12 +1,7 @@
-import BackgroundShape from "@/component/svgComponet/jamstackHP/BackgroundShape";
-import BarGraph from "@/component/svgComponet/jamstackHP/BarGraph";
-import MainVisualSvg from "@/component/svgComponet/jamstackHP/MainVisual";
-import Link from "next/link";
-import styles from "./MainVisual.module.scss";
 export default function MainVisual() {
   return (
     <>
-      <div className={styles.fv_inner}>
+      {/* <div className={styles.fv_inner}>
         <div
         className={styles.fv_container}
           style={{
@@ -25,7 +20,7 @@ export default function MainVisual() {
             <div className={styles.main_inner}>
               <h1 className={styles.main_title}>Jamstackサイト制作</h1>
               <p className={styles.sub_title}>
-                最新技術で集客と売上に加速を
+                最新技術で集客と売上に加速をddd
                 <br />
               </p>
             </div>
@@ -53,7 +48,7 @@ export default function MainVisual() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

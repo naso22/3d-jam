@@ -28,6 +28,11 @@
   order: 1;
   font-weight: bold;
   text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; // 行数を変更する場合はこの数値を調整
 }
 
 .card__thumbnail02 {

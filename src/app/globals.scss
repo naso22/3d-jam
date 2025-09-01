@@ -1,3 +1,4 @@
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,6 +19,7 @@ body {
   color: #333;
   word-break: break-all;
   letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
 }
 
 * {

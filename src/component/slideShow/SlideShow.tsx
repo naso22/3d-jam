@@ -7,6 +7,7 @@ import styles from "./SlideShow.module.scss";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Link from "next/link";
+import Image from "next/image";
 
 type BlogPost = {
   id: string;
@@ -60,9 +61,12 @@ export default function SlideShow({blogList}:PostViewProps) {
     return (
 <SwiperSlide key={blog.id}>
 <Link href={`/blog/${blog.id}`}>
-        <img
+        <Image
           src={blog.mainVisual?.url}
-          alt=""
+          alt={blog.title || "ブログ画像"}
+          width={1200}
+          height={630}
+          style={{ width: "100%", height: "auto" }}
         />
          </Link>
       </SwiperSlide>

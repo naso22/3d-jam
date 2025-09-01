@@ -8,6 +8,7 @@ import RightIcon from "@/component/svgComponet/jamstackHP/about/RightIcon";
 import ServerIcon from "@/component/svgComponet/jamstackHP/about/ServerIcon";
 import styles from "./AboutSection.module.scss";
 import ComparisonTable from "./ComparisonTable/ComparisonTable";
+import Image from "next/image";
 export default function AboutSection() {
   return (
     <section className={styles.about}>
@@ -101,25 +102,31 @@ export default function AboutSection() {
         <div className={styles.techBlock}>
           <div className={styles.techCard}>
             <div className={styles.techCardTitle}>CMS</div>
-            <img className="fit-picture" src="/image6.png" />
-            <img className="fit-picture" src="/logo-black.png" />
+            <Image className="fit-picture" src="/image6.png" alt="CMS: image6" width={200} height={200} />
+            <Image className="fit-picture" src="/logo-black.png" alt="CMS: logo" width={200} height={200} />
           </div>
           <div className={styles.techCard}>
             <div className={styles.techCardTitle}>フロントエンド</div>
-            <img
+            <Image
               className="fit-picture"
               src="/nextjs.png"
-              style={{ width: "40%" }}
+              alt="フロントエンド: Next.js"
+              width={200}
+              height={200}
+              style={{ width: "40%", height: "auto" }}
             />
           </div>
           <div className={styles.techCard}>
             <div className={styles.techCardTitle}>ホスティング</div>
-            <img
+            <Image
               className="fit-picture"
-              style={{ width: "41%" }}
+              style={{ width: "41%", height: "auto" }}
               src="/pngwing.png"
+              alt="ホスティング: 画像1"
+              width={200}
+              height={200}
             />
-            <img className="fit-picture" src="/image.png" />
+            <Image className="fit-picture" src="/image.png" alt="ホスティング: 画像2" width={200} height={200} />
           </div>
         </div>
         <h2>

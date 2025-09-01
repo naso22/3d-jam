@@ -1,4 +1,5 @@
 import styles from "./ProcessSection.module.scss";
+import Image from "next/image";
 
 export default function ProcessSection() {
   return (
@@ -13,7 +14,7 @@ export default function ProcessSection() {
         <div className={styles.processInner}>
           <div className={`${styles.arrow} ${styles.item1}`}>
             <div>
-              <img src="Process/hiarling.png" alt="" />
+              <Image src="/Process/hiarling.png" alt="打ち合わせ・ヒアリング" width={300} height={300} />
               <div className={styles.processNode}>打ち合わせ・ヒアリング</div>
             </div>
           </div>
@@ -29,7 +30,7 @@ export default function ProcessSection() {
           </svg>
           <div className={`${styles.arrow} ${styles.item3}`}>
             <div>
-              <img src="Process/design.png" alt="" />
+              <Image src="/Process/design.png" alt="仕様検討・要件定義" width={300} height={300} />
               <div className={styles.processNode}>仕様検討・要件定義</div>
             </div>
           </div>
@@ -47,7 +48,7 @@ export default function ProcessSection() {
 
           <div className={`${styles.arrow} ${styles.item5}`}>
             <div>
-              <img src="Process/create-web.png" alt="" />
+              <Image src="/Process/create-web.png" alt="デザイン・使用検討" width={300} height={300} />
               <div className={styles.processNode}>デザイン・使用検討</div>
             </div>
           </div>
@@ -64,7 +65,7 @@ export default function ProcessSection() {
 
           <div className={`${styles.arrow} ${styles.item7}`}>
             <div>
-              <img src="Process/siteTest.png" alt="" />
+              <Image src="/Process/siteTest.png" alt="保守・運用" width={300} height={300} />
               <div className={styles.processNode}>保守・運用</div>
             </div>
           </div>

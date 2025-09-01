@@ -78,6 +78,227 @@
       height: 100%;
     }
   }
+
+  // コードブロックのスタイリング
+  pre {
+    background-color: #3a3a3a;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 1em 0;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 14px;
+    line-height: 1.45;
+    position: relative;
+    
+    code {
+      background: none;
+      padding: 0;
+      border: none;
+      font-size: inherit;
+      color: #ffffff;
+    }
+
+    // コピーボタンのスタイリング
+    .copy-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background-color: #3a3a3a;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      padding: 6px 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+      
+      &:hover {
+        background-color: #e2e8f0;
+        border-color: #94a3b8;
+      }
+      
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  // インラインコードのスタイリング
+  code {
+    background-color: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.9em;
+    color: #000000;
+  }
+
+  // 言語指定のあるコードブロック
+  pre[class*="language-"] {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    border: 1px solid #4a5568;
+    position: relative;
+    
+    code {
+      color: #e2e8f0;
+    }
+
+    // 言語表示ラベル
+    &::before {
+      content: attr(class);
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #4a5568;
+      color: #e2e8f0;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 0 6px 0 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    // 言語クラスから "language-" プレフィックスを除去
+    &[class*="language-typescript"]::before {
+      content: "TypeScript";
+    }
+    
+    &[class*="language-javascript"]::before {
+      content: "JavaScript";
+    }
+    
+    &[class*="language-jsx"]::before {
+      content: "JSX";
+    }
+    
+    &[class*="language-tsx"]::before {
+      content: "TSX";
+    }
+    
+    &[class*="language-html"]::before {
+      content: "HTML";
+    }
+    
+    &[class*="language-css"]::before {
+      content: "CSS";
+    }
+    
+    &[class*="language-scss"]::before {
+      content: "SCSS";
+    }
+    
+    &[class*="language-json"]::before {
+      content: "JSON";
+    }
+    
+    &[class*="language-bash"]::before {
+      content: "Bash";
+    }
+    
+    &[class*="language-shell"]::before {
+      content: "Shell";
+    }
+    
+    &[class*="language-python"]::before {
+      content: "Python";
+    }
+    
+    &[class*="language-java"]::before {
+      content: "Java";
+    }
+    
+    &[class*="language-cpp"]::before {
+      content: "C++";
+    }
+    
+    &[class*="language-c"]::before {
+      content: "C";
+    }
+    
+    &[class*="language-php"]::before {
+      content: "PHP";
+    }
+    
+    &[class*="language-ruby"]::before {
+      content: "Ruby";
+    }
+    
+    &[class*="language-go"]::before {
+      content: "Go";
+    }
+    
+    &[class*="language-rust"]::before {
+      content: "Rust";
+    }
+    
+    &[class*="language-sql"]::before {
+      content: "SQL";
+    }
+    
+    &[class*="language-yaml"]::before {
+      content: "YAML";
+    }
+    
+    &[class*="language-markdown"]::before {
+      content: "Markdown";
+    }
+  }
+
+  // シンタックスハイライト用の基本スタイル
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #6a737d;
+  }
+
+  .token.punctuation {
+    color: #e1e4e8;
+  }
+
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol {
+    color: #79b8ff;
+  }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin {
+    color: #85e89d;
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .token.variable {
+    color: #f97583;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    color: #f97583;
+  }
+
+  .token.function {
+    color: #b392f0;
+  }
+
+  .token.regex,
+  .token.important {
+    color: #ffab70;
+  }
 }
 
 @media screen and (max-width: 780px) {
