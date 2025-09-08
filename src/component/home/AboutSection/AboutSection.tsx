@@ -27,7 +27,7 @@ export default function AboutSection() {
 				</p>
 				<p>Next.js / React / Vue.js / TypeScript / Vercel / Amplify / Figma / Ruby / Ruby on rails / python / MySql / micro CMS </p>
 				<p className={styles.sns}>
-					<a href="https://x.com/wGOGNc30tFGCCiA">X</a>
+					<a>X</a>
 				</p>
 				<Link href={`/contact`}>
 					<p className={styles.contact_btn}>お問い合わせ</p>
