@@ -9,7 +9,7 @@ export default function SideBar() {
         <div className={styles.widget__inner}>
           <p className={styles.widget__name}>長野 冷</p>
           <div className={styles.widget__text}>
-            東京都江戸川区を拠点にフロントエンドエンジニアをしています。
+            フロントエンドエンジニアをしています。
             <br />
             UI・UXに優れたWEBサイト制作を得意としています。
           </div>

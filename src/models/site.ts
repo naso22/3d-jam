@@ -2,7 +2,7 @@ export const site = {
   title: "Jamな男",
   subTitle: "JamstackなWEBサイト制作",
   description:
-    "東京都江戸川区を拠点にUI・UXに優れたWEBサイト制作をしています。",
+    "UI・UXに優れたWEBサイト制作をしています。",
   domain: "reinagano",
 };
 

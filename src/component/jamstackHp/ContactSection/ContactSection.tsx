@@ -12,7 +12,7 @@ export default function ContactSection() {
                 <p className={styles.title}>お問い合わせ</p>
               </div>
               <p>
-                東京都江戸川区を拠点にフロントエンドエンジニアをしています。
+               フロントエンドエンジニアをしています。
                 <br />
                 Next.js,React,TypeScriptを使った、サイト制作/アプリ開発を得意としています。
               </p>
