@@ -18,7 +18,7 @@ export default function ServiceSection() {
 									<span className={styles.icon}>
 										<PcIcon />
 									</span>
-									jamstackサイト制作
+									jamstackサイト制作ddd
 								</div>
 								<p className={`${styles.discription}`}>
 									Jamstack技術を駆使した高速で安全なWebサイトを構築いたします。
