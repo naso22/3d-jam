@@ -1,6 +1,5 @@
 import BreadcrumbComponent from "@/component/breadcrumb/BreadcrumbComponent";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./ArticleComponent.module.scss";
 
 type ArticleComponentProps = {
