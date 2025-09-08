@@ -21,11 +21,6 @@ export const metadata: Metadata = {
 		type: 'website',
 		images: `https://${site.domain}/images/ogp.png`,
 	},
-	// twitter: {
-	//   card: 'summary_large_image',
-	//   site: site.title,
-	//   images: `https://${site.domain}/images/ogp.png`,
-	// },
 };
 
 async function getNavItems() {
