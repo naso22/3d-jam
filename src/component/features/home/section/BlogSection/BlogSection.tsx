@@ -38,6 +38,7 @@ export default async function BlogSection() {
   const blogList: BlogPost = await getBlogList();
   return (
     <>
+    <div className={styles.blog} id="blog">
       <div className="service_inner">
         <div className={styles.blog_inner}>
           <h2 className={styles.title_eng}>Blog</h2>
@@ -54,6 +55,7 @@ export default async function BlogSection() {
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 }

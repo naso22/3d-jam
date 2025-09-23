@@ -7,6 +7,7 @@ import styles from './ServiceSection.module.scss';
 export default function ServiceSection() {
 	return (
 		<>
+		<div id="service" className={styles.section}>
 			<div className={styles.service}>
 				<div className="service_inner">
 					<h2 className={styles.title_eng}>Service</h2>
@@ -107,6 +108,7 @@ export default function ServiceSection() {
 								</svg>
 							</Link>
 						</div>
+					</div>
 					</div>
 				</div>
 			</div>

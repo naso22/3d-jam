@@ -1,3 +1,13 @@
+.section {
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 50px;
+  padding-bottom: 100px;
+  box-shadow: 0px 30px 80px rgba(36, 57, 69, 0.15);
+  @media screen and (max-width: 780px) {
+    padding: 30px;
+  }
+}
 .service {
   margin: 0 auto;
   max-width: 1180px;

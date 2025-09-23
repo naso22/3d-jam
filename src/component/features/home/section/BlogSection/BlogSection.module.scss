@@ -1,3 +1,14 @@
+.blog {
+  background: -webkit-linear-gradient(90deg, #184f8e, #11319a);
+  padding: 0 3em;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0px 30px 80px rgba(36, 57, 69, 0.15);
+  @media screen and (max-width: 780px) {
+    padding: 30px;
+  }
+}
 .title {
   text-align: center;
   color: #ffffff;

@@ -3,6 +3,7 @@ import { site } from '@/models/site';
 import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
 import Header from '@/component/layouts/Header';
+import Footer from '@/component/layouts/Footer';
 
 const notoSansJP = Noto_Sans_JP({
 	subsets: ['latin'],
@@ -45,6 +46,7 @@ export default async function RootLayout({
 			<body className={notoSansJP.className}>
 				<Header navItems={navItems} />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);

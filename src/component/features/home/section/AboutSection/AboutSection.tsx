@@ -5,6 +5,7 @@ import styles from './AboutSection.module.scss';
 export default function AboutSection() {
 	return (
 		<>
+		<div className={styles.aboutMe} id="about">
 			<div className={styles.aboutMe_wrapper}>
 				<div>
 					<Image
@@ -33,6 +34,7 @@ export default function AboutSection() {
 					<p className={styles.contact_btn}>お問い合わせ</p>
 				</Link>
 			</div>
+		</div>
 		</>
 	);
 }
