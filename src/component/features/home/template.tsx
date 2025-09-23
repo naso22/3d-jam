@@ -8,7 +8,7 @@ export default async function HomeTemplate() {
   return (
     <>
       <MainWrapper className="top">
-        <FirstView />
+          <FirstView />
           <ServiceSection />
           <BlogSection />
           <AboutSection />

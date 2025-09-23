@@ -1,6 +1,4 @@
 import React from 'react';
-import styles from './MainWrapper.module.scss';
-
 interface MainWrapperProps {
   children: React.ReactNode;
   className?: string;

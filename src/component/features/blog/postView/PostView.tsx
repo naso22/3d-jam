@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import BlogCard from "../card/BlogCard";
-import MoreBtn from "../parts/moreBtn/MoreBtn";
-import PageNation from "../parts/pageNation/PageNation";
+import BlogCard from "@/component/common/card/BlogCard";
+import MoreBtn from "@/component/common/button/MoreBtn";
+import PageNation from "@/component/features/blog/pageNation/PageNation";
 import styles from "./PostView.module.scss";
 
 type BlogCategory = {

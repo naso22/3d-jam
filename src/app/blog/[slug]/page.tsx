@@ -1,7 +1,7 @@
 // app/blog/[slug]/page.tsx
 import ArticleComponent from "@/component/article/ArticleComponent";
 import Footer from "@/component/layouts/Footer";
-import SideBar from "@/component/sideBar/SideBar";
+import SideBar from "@/component/layouts/SideBar";
 import { client } from "@/libs/client";
 import { blog } from "@/models/site";
 import { Metadata } from "next";

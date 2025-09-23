@@ -1,5 +1,5 @@
 import styles from "./FirstView.module.scss"
-import ParticleCube from "@/component/particleCube/ParticleCube";
+import ParticleCube from "@/component/features/home/section/firstView/parts/ParticleCube";
 export default function FirstView() {
   return (
     <>

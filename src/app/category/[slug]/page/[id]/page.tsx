@@ -1,7 +1,7 @@
 import BreadcrumbComponent from "@/component/breadcrumb/BreadcrumbComponent";
 import Footer from "@/component/layouts/Footer";
-import PostView from "@/component/postView/PostView";
-import SideBar from "@/component/sideBar/SideBar";
+import PostView from "@/component/features/blog/postView/PostView";
+import SideBar from "@/component/layouts/SideBar";
 import { client } from "@/libs/client";
 export async function generateStaticParams() {
   const categoryResponse = await client

@@ -1,6 +1,7 @@
-import BlogCard from "@/component/card/BlogCard";
+import BlogCard from "@/component/common/card/BlogCard";
 import Link from "next/link";
 import styles from "./BlogSection.module.scss";
+import { client } from "@/libs/client";
 type BlogCategory = {
   id: string;
   title: string;
@@ -21,17 +22,17 @@ type BlogPost = {
 };
 
 async function getBlogList() {
-  const res = await fetch("https://3d-jam.microcms.io/api/v1/blog?limit=3", {
-    headers: {
-      "X-MICROCMS-API-KEY": "bxIFdC5L3HBD7E2sOtaKfl9EbH8bUDWolax7",
-    },
-    // cache: "no-store",
-  });
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+  try {
+    const data = await client.get({
+      endpoint: "blog",
+      queries: {
+        limit: 3,
+      },
+    });
+    return data;
+  } catch {
+    throw new Error("Failed to fetch blog data");
   }
-  const data = await res.json();
-  return data;
 }
 
 export default async function BlogSection() {
