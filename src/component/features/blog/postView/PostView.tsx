@@ -4,24 +4,10 @@ import BlogCard from "@/component/common/card/BlogCard";
 import MoreBtn from "@/component/common/button/MoreBtn";
 import PageNation from "@/component/features/blog/pageNation/PageNation";
 import styles from "./PostView.module.scss";
-
-type BlogCategory = {
-  id: string;
-  title: string;
-};
-
-type BlogPost = {
-  id: string;
-  title: string;
-  mainVisual: {
-    url: string;
-  };
-  category: BlogCategory[];
-  updatedAt: string;
-};
+import {BlogListProps } from "@/models/blog";
 
 type PostViewProps = {
-  blogList: { newBlog: BlogPost[]; categoryBlog?: BlogPost[] };
+  blogList: BlogListProps;
   totalCount: number;
   limit: number;
   currentPage: { path: string; page: number };

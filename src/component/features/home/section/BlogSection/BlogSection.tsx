@@ -2,26 +2,9 @@ import BlogCard from "@/component/common/card/BlogCard";
 import Link from "next/link";
 import styles from "./BlogSection.module.scss";
 import { client } from "@/libs/client";
-type BlogCategory = {
-  id: string;
-  title: string;
-  mainVisual: {
-    url: string;
-  };
-  category: BlogCategory[];
-  updatedAt: string;
-};
+import { BlogResponse } from "@/models/blog";
 
-type BlogPost = {
-  id: string;
-  title: string;
-  mainVisual: {
-    url: string;
-  };
-  contents: BlogCategory[];
-};
-
-async function getBlogList() {
+async function getBlogList(): Promise<BlogResponse> {
   try {
     const data = await client.get({
       endpoint: "blog",
@@ -36,7 +19,7 @@ async function getBlogList() {
 }
 
 export default async function BlogSection() {
-  const blogList: BlogPost = await getBlogList();
+  const blogList: BlogResponse = await getBlogList();
   return (
     <>
     <div className={styles.blog} id="blog">

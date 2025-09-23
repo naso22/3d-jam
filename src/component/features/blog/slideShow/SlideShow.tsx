@@ -8,26 +8,13 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Link from "next/link";
 import Image from "next/image";
+import { BlogListProps } from "@/models/blog";
 
-type BlogPost = {
-  id: string;
-  title: string;
-  mainVisual: {
-    url: string;
-  };
-  category: BlogCategory[];
+type SlideShowProps = {
+  blogList: BlogListProps;
 };
 
-type BlogCategory = {
-  id: string;
-  title: string;
-};
-
-type PostViewProps = {
-  blogList: { newBlog: BlogPost[]; categoryBlog?: BlogPost[] };
-};
-
-export default function SlideShow({blogList}:PostViewProps) {
+export default function SlideShow({blogList}:SlideShowProps) {
   return (
     <>
       <div className={styles.FirstView}>

@@ -1,23 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './BlogCard.module.scss';
+import { BlogPost } from '@/models/blog';
 
-type BlogCategory = {
-	title: string;
+type BlogCardProps = {
+	blog: BlogPost;
 };
 
-type BlogPost = {
-	blog: {
-		id: string;
-		title: string;
-		mainVisual: {
-			url: string;
-		};
-		category: BlogCategory[];
-		updatedAt: string;
-	};
-};
-export default function BlogCard({ blog }: BlogPost) {
+export default function BlogCard({ blog }: BlogCardProps) {
 	
 	// 日付を2023/03/06の形式でフォーマット
 	const formatDate = (dateString: string) => {
