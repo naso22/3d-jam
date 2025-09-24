@@ -1,121 +1,43 @@
-import ArticleComponent from "@/component/features/article/article/ArticleComponent";
-import SideBar from "@/component/layouts/SideBar";
-import { client } from "@/libs/client";
-import { blog } from "@/models/site";
+import { ArticleTemplateProps } from "./types/article";
+import { 
+	fetchArticle, 
+	ArticleNotFoundError, 
+	ArticleServiceError 
+} from "./services/articleService";
+import ArticleLayout from "./components/ArticleLayout";
+import ArticleContent from "./components/ArticleContent";
+import ErrorState from "./components/ErrorState";
 
-interface ArticleTemplateProps {
-	slug: string;
-}
-
+/**
+ * 記事テンプレートコンポーネント
+ * 記事の取得と表示を管理する
+ */
 export default async function ArticleTemplate({ slug }: ArticleTemplateProps) {
-	// デフォルトケースの処理
-	if (slug === "default") {
-		return (
-			<>
-				<div className="content__wrapper">
-					<div className="content">
-						<div className="content__inner">
-							<div style={{ marginTop: "100px", height: "50vh" }}>
-								記事が見つかりませんでした。
-							</div>
-						</div>
-					</div>
-				</div>
-			</>
-		);
-	}
-
 	try {
-		// APIリクエストで記事を取得
-		const article = await client.get({
-			endpoint: "blog",
-			contentId: slug,
-		});
-
+		const article = await fetchArticle(slug);
+		
 		return (
-			<>
-				<div className="content__wrapper">
-					<div className="content">
-						<div className="content__inner">
-							<ArticleComponent
-								blogUrl={article?.id}
-								title={article?.title}
-								mainVisual={article?.mainVisual?.url}
-								articleContent={article?.content}
-							/>
-							<SideBar />
-						</div>
-					</div>
-				</div>
-			</>
+			<ArticleLayout>
+				<ArticleContent article={article} />
+			</ArticleLayout>
 		);
 	} catch (error) {
 		console.error("記事の取得中にエラーが発生しました", error);
-		return (
-			<>
-				<div className="content__wrapper">
-					<div className="content">
-						<div className="content__inner">
-							<div style={{ marginTop: "100px", height: "50vh" }}>
-								記事の取得中にエラーが発生しました。
-							</div>
-						</div>
-					</div>
-				</div>
-			</>
-		);
-	}
-}
-
-// 静的パス生成関数をエクスポート
-export async function generateArticleStaticParams() {
-	const { contents, totalCount } = await client.get({
-		endpoint: "blog",
-	});
-	
-	if (!totalCount) {
-		return [{ slug: "default" }];
-	}
-
-	return contents.map((article: { id: string }) => ({
-		slug: article.id,
-	}));
-}
-
-// メタデータ生成関数をエクスポート
-export async function generateArticleMetadata(slug: string) {
-	try {
-		if (slug === "default") {
-			return {
-				openGraph: {
-					title: "Default Article",
-					description: "Default article description",
-					url: `https://${blog?.domain}/blog/default`,
-				},
-			};
+		
+		// エラータイプに応じて適切なメッセージを表示
+		if (error instanceof ArticleNotFoundError) {
+			return <ErrorState message="記事が見つかりませんでした。" />;
 		}
-
-		const article = await client.get({
-			endpoint: "blog",
-			contentId: slug,
-		});
-
-		return {
-			title: article?.title,
-			openGraph: {
-				title: article?.title || "No Title",
-				description: article?.description || "No description",
-				url: `https://${blog?.domain}/blog/${slug}`,
-			},
-		};
-	} catch (error) {
-		console.error("Error fetching metadata:", error);
-		return {
-			openGraph: {
-				title: "No Title",
-				description: "No description",
-				url: `https://${blog?.domain}/blog/${slug}`,
-			},
-		};
+		
+		if (error instanceof ArticleServiceError) {
+			return <ErrorState message="記事の取得中にエラーが発生しました。" />;
+		}
+		
+		// 予期しないエラー
+		return <ErrorState message="予期しないエラーが発生しました。" />;
 	}
 }
+
+// 他のモジュールからエクスポートされた関数を再エクスポート
+export { generateArticleStaticParams } from "./services/metadataService";
+export { generateArticleMetadata } from "./services/metadataService";
