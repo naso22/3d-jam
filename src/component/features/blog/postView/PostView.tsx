@@ -1,18 +1,10 @@
 "use client";
 import { useState } from "react";
-import BlogCard from "@/component/common/card/BlogCard";
-import MoreBtn from "@/component/common/button/MoreBtn";
-import PageNation from "@/component/features/blog/pageNation/PageNation";
+import PostTab from "./components/PostTab";
+import PostList from "./components/PostList";
+import { PostViewProps, CategoryType } from "./types";
+import { CATEGORIES, DEFAULT_CATEGORY } from "./constants";
 import styles from "./PostView.module.scss";
-import {BlogListProps } from "@/models/blog";
-
-type PostViewProps = {
-  blogList: BlogListProps;
-  totalCount: number;
-  limit: number;
-  currentPage: { path: string; page: number };
-  showTab: boolean;
-};
 
 export default function PostView({
   blogList,
@@ -21,94 +13,38 @@ export default function PostView({
   currentPage,
   showTab,
 }: PostViewProps) {
-  const [selectedTab, setSelectedTab] = useState("new");
+  const [selectedTab, setSelectedTab] = useState<CategoryType>(DEFAULT_CATEGORY);
 
-  const renderPosts = (category: string, index: number) => {
-    const filteredPosts =
-      category === "new"
-        ? blogList.newBlog
-        : blogList.categoryBlog?.filter(
-            (blog) => blog.category[0]?.title === category
-          );
-
-    return (
-      <div
-        key={index}
-        className={`${styles.post} ${
-          selectedTab === category ? styles.show : ""
-        }`}
-      >
-        <div className={styles.post__inner}>
-          {(filteredPosts || []).length > 0 ? (
-            filteredPosts?.map((blog, index) => (
-              <BlogCard key={index} blog={blog} />
-            ))
-          ) : (
-            <p className={styles.noPostsMessage}>一致する投稿がありません。</p>
-          )}
-        </div>
-        {filteredPosts?.length !== 0 && category === "new" && (
-          <PageNation
-            totalCount={totalCount}
-            limit={limit}
-            currentPage={currentPage}
-          />
-        )}
-        {filteredPosts?.length !== 0 && category !== "new" && (
-          <>
-            <div className={styles.more_btn_inner}>
-              <MoreBtn
-                category={category}
-                categoryId={filteredPosts?.[0]?.category[0]?.id}
-              />
-            </div>
-          </>
-        )}
-      </div>
-    );
+  const handleTabChange = (category: CategoryType) => {
+    setSelectedTab(category);
   };
 
   return (
     <div className="content-inner">
       {showTab && (
-        <div className={styles.postTab}>
-          <div
-            className={`${styles.tab1} ${
-              selectedTab === "new" ? styles.selected : ""
-            }`}
-            onClick={() => setSelectedTab("new")}
-          >
-            最新記事
-          </div>
-          <div
-            className={`${styles.tab2} ${
-              selectedTab === "Jamstack" ? styles.selected : ""
-            }`}
-            onClick={() => setSelectedTab("Jamstack")}
-          >
-            Jamstack
-          </div>
-          <div
-            className={`${styles.tab3} ${
-              selectedTab === "UI/UX" ? styles.selected : ""
-            }`}
-            onClick={() => setSelectedTab("UI/UX")}
-          >
-            UI/UX
-          </div>
-          <div
-            className={`${styles.tab4} ${
-              selectedTab === "デザイン" ? styles.selected : ""
-            }`}
-            onClick={() => setSelectedTab("デザイン")}
-          >
-            デザイン
-          </div>
+        <PostTab
+          categories={CATEGORIES}
+          selectedTab={selectedTab}
+          onTabChange={handleTabChange}
+        />
+      )}
+      
+      {CATEGORIES.map((category) => (
+        <div
+          key={category.id}
+          className={`${styles.post} ${
+            selectedTab === category.id ? styles.show : ""
+          }`}
+        >
+          <PostList
+            blogList={blogList}
+            selectedCategory={category.id}
+            totalCount={totalCount}
+            limit={limit}
+            currentPage={currentPage}
+          />
         </div>
-      )}
-      {["new", "Jamstack", "UI/UX","デザイン"].map((category, index) =>
-        renderPosts(category, index)
-      )}
+      ))}
     </div>
   );
 }

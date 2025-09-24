@@ -1,4 +1,3 @@
-import Footer from "@/component/layouts/Footer";
 import SideBar from "@/component/layouts/SideBar";
 import { site } from "@/models/site";
 import type { Metadata } from "next";

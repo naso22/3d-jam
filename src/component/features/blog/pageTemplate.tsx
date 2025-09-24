@@ -1,4 +1,3 @@
-import Footer from '@/component/layouts/Footer';
 import PostView from '@/component/features/blog/postView/PostView';
 import SideBar from '@/component/layouts/SideBar';
 import SlideShow from '@/component/features/blog/slideShow/SlideShow';

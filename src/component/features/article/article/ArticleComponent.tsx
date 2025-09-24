@@ -1,4 +1,4 @@
-import BreadcrumbComponent from "@/component/breadcrumb/BreadcrumbComponent";
+import BreadcrumbComponent from "@/component/features/article/breadcrumb/BreadcrumbComponent";
 import Image from "next/image";
 import styles from "./ArticleComponent.module.scss";
 

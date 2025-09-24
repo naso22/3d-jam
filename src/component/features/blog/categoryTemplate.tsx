@@ -1,4 +1,4 @@
-import BreadcrumbComponent from "@/component/breadcrumb/BreadcrumbComponent";
+import BreadcrumbComponent from "@/component/features/article/breadcrumb/BreadcrumbComponent";
 import PostView from "@/component/features/blog/postView/PostView";
 import SideBar from "@/component/layouts/SideBar";
 import { client } from "@/libs/client";

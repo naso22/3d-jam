@@ -1,5 +1,4 @@
-import ArticleComponent from "@/component/article/ArticleComponent";
-import Footer from "@/component/layouts/Footer";
+import ArticleComponent from "@/component/features/article/article/ArticleComponent";
 import SideBar from "@/component/layouts/SideBar";
 import { client } from "@/libs/client";
 import { blog } from "@/models/site";
