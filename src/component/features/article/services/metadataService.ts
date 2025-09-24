@@ -1,5 +1,5 @@
 import { blog } from "@/models/site";
-import { fetchArticle, ArticleNotFoundError } from "./articleService";
+import { fetchArticle } from "./articleService";
 
 export interface ArticleMetadata {
 	title?: string;

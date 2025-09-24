@@ -1,6 +1,6 @@
-import ArticleComponent from "@/component/features/article/article/ArticleComponent";
+import ArticleComponent from "@/component/features/article/article/components/ArticleComponent";
 import SideBar from "@/component/layouts/SideBar";
-import { Article } from "../types/article";
+import { Article } from "@/component/features/article/types/article";
 
 interface ArticleContentProps {
 	article: Article;

@@ -4,9 +4,9 @@ import {
 	ArticleNotFoundError, 
 	ArticleServiceError 
 } from "./services/articleService";
-import ArticleLayout from "./components/ArticleLayout";
-import ArticleContent from "./components/ArticleContent";
-import ErrorState from "./components/ErrorState";
+import ArticleLayout from "./article/components/ArticleLayout";
+import ArticleContent from "./article/ArticleContent";
+import ErrorState from "./article/components/ErrorState";
 
 /**
  * 記事テンプレートコンポーネント
